@@ -7,6 +7,7 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ConfirmaccountComponent } from './confirmaccount/confirmaccount.component';
+import { OnetimeuseComponent } from './onetimeuse/onetimeuse.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ConfirmaccountComponent } from './confirmaccount/confirmaccount.compone
     UserComponent,
     LoginComponent,
     SignupComponent,
-    ConfirmaccountComponent
+    ConfirmaccountComponent,
+    OnetimeuseComponent
   ],
   imports: [
     BrowserModule,
