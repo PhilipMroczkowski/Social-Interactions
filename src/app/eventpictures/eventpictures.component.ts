@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EventComponent} from 'src/app/event/event.component'
 
 @Component({
   selector: 'app-eventpictures',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventpicturesComponent implements OnInit {
 
+  id : EventComponent;
   imageUrl : string;
 
   constructor() { }

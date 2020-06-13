@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupComponent implements OnInit {
 
+  id : number;
+  groupName: string;
+  tags: string;
+  groupCategory : string;
+
   constructor() { }
 
   ngOnInit() {
