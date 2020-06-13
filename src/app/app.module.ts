@@ -13,6 +13,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { GroupComponent } from './group/group.component';
 import { RequestComponent } from './request/request.component';
 import { GroupchatComponent } from './groupchat/groupchat.component';
+import { MessageComponent } from './message/message.component';
+import { SearchcriteriaComponent } from './searchcriteria/searchcriteria.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { GroupchatComponent } from './groupchat/groupchat.component';
     ProfileComponent,
     GroupComponent,
     RequestComponent,
-    GroupchatComponent
+    GroupchatComponent,
+    MessageComponent,
+    SearchcriteriaComponent
   ],
   imports: [
     BrowserModule,
