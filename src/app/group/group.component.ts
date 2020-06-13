@@ -11,6 +11,13 @@ export class GroupComponent implements OnInit {
   groupName: string;
   tags: string;
   groupCategory : string;
+  groupSubCategory : string;
+  purpose : string;
+  memberType : string;
+  groupAdmin : string;
+  groupDescription : string;
+  groupCount : number;
+  groupPhoto : string;
 
   constructor() { }
 
