@@ -11,6 +11,7 @@ import { OnetimeuseComponent } from './onetimeuse/onetimeuse.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GroupComponent } from './group/group.component';
+import { RequestComponent } from './request/request.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GroupComponent } from './group/group.component';
     OnetimeuseComponent,
     ResetpasswordComponent,
     ProfileComponent,
-    GroupComponent
+    GroupComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,
