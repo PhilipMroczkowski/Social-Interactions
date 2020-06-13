@@ -10,6 +10,7 @@ import { ConfirmaccountComponent } from './confirmaccount/confirmaccount.compone
 import { OnetimeuseComponent } from './onetimeuse/onetimeuse.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ProfileComponent } from './profile/profile.component';
+import { GroupComponent } from './group/group.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProfileComponent } from './profile/profile.component';
     ConfirmaccountComponent,
     OnetimeuseComponent,
     ResetpasswordComponent,
-    ProfileComponent
+    ProfileComponent,
+    GroupComponent
   ],
   imports: [
     BrowserModule,
