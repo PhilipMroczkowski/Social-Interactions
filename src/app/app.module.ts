@@ -15,6 +15,8 @@ import { RequestComponent } from './request/request.component';
 import { GroupchatComponent } from './groupchat/groupchat.component';
 import { MessageComponent } from './message/message.component';
 import { SearchcriteriaComponent } from './searchcriteria/searchcriteria.component';
+import { EventComponent } from './event/event.component';
+import { EventpicturesComponent } from './eventpictures/eventpictures.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { SearchcriteriaComponent } from './searchcriteria/searchcriteria.compone
     RequestComponent,
     GroupchatComponent,
     MessageComponent,
-    SearchcriteriaComponent
+    SearchcriteriaComponent,
+    EventComponent,
+    EventpicturesComponent
   ],
   imports: [
     BrowserModule,
