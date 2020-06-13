@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ConfirmaccountComponent } from './confirmaccount/confirmaccount.component';
 import { OnetimeuseComponent } from './onetimeuse/onetimeuse.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { OnetimeuseComponent } from './onetimeuse/onetimeuse.component';
     LoginComponent,
     SignupComponent,
     ConfirmaccountComponent,
-    OnetimeuseComponent
+    OnetimeuseComponent,
+    ResetpasswordComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
