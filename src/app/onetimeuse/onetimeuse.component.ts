@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnetimeuseComponent implements OnInit {
 
+  oneTimePassword : string;
+  oneTimeLink : string;
+
   constructor() { }
 
   ngOnInit() {

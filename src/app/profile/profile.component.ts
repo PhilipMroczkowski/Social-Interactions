@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserComponent} from '../user/user.component';
 
 @Component({
   selector: 'app-profile',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
+  name : UserComponent['name'];
+  eventSet : UserComponent['eventSet'];
+  groupSet : UserComponent['eventSet']
+  interests : UserComponent['interests'];
+  profilePicture : string;
 
   constructor() { }
 

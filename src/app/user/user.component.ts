@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginComponent} from '../login/login.component';
 
 @Component({
   selector: 'app-user',
@@ -8,6 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class UserComponent implements OnInit {
 
   id : number;
+  name : string;
+  username : LoginComponent["username"];
+  password : LoginComponent["password"];
+  eventSet : string[];
+  groupSet : string[];
+  interests : string[];
 
   constructor() { }
 
