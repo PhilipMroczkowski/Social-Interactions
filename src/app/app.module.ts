@@ -12,6 +12,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { ProfileComponent } from './profile/profile.component';
 import { GroupComponent } from './group/group.component';
 import { RequestComponent } from './request/request.component';
+import { GroupchatComponent } from './groupchat/groupchat.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RequestComponent } from './request/request.component';
     ResetpasswordComponent,
     ProfileComponent,
     GroupComponent,
-    RequestComponent
+    RequestComponent,
+    GroupchatComponent
   ],
   imports: [
     BrowserModule,
