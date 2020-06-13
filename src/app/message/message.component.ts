@@ -7,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
-  constructor() { }
+  id : number;
+  newMessage : string;
+  messageFile : string;
+  messageStatus : string;
+  messageTime : Date = new Date(Date.now());
+  
+  
 
+  constructor() {}
+    
   ngOnInit() {
   }
 
