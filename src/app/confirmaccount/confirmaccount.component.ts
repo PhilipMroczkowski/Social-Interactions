@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmaccountComponent implements OnInit {
 
+  userName : string;
+  password: string;
+
   constructor() { }
 
   ngOnInit() {
