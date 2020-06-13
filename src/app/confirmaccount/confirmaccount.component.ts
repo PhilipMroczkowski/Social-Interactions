@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserComponent } from '../user/user.component';
 
 @Component({
   selector: 'app-confirmaccount',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmaccountComponent implements OnInit {
 
-  userName : string;
-  password: string;
+  phone : UserComponent['phone'];
+  email : UserComponent['email'];
 
   constructor() { }
 
