@@ -38,6 +38,11 @@ import { EventpicturesComponent } from './eventpictures/eventpictures.component'
     BrowserModule,
     AppRoutingModule
   ],
+  exports: [
+    ResetpasswordComponent,
+    LoginComponent,
+    SignupComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
