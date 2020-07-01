@@ -16,6 +16,7 @@ import { GroupchatComponent } from './groupchat/groupchat.component';
 import { MessageComponent } from './message/message.component';
 import { EventComponent } from './event/event.component';
 import { EventpicturesComponent } from './eventpictures/eventpictures.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EventpicturesComponent } from './eventpictures/eventpictures.component'
     GroupchatComponent,
     MessageComponent,
     EventComponent,
-    EventpicturesComponent
+    EventpicturesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

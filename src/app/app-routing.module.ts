@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 const routes: Routes = [
@@ -14,7 +16,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+
+  imports: 
+  [RouterModule.forRoot(routes),
+  CommonModule,
+  BrowserModule,
+  FormsModule , 
+  ReactiveFormsModule 
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
