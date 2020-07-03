@@ -20,12 +20,13 @@ export class GroupComponent implements OnInit {
   groupPhoto : string;
 
   constructor() { 
-    this.groupName = 'sample name';
+    this.groupName = 'sample group name';
     this.tags = ['Gaming', 'Sports', 'Food'];
     this.groupCategory = 'Playing Games';
     this.groupSubCategory = 'Social';
     this.groupAdmin = 'user name';
     this.groupDescription = 'This is a sample group!';
+    this.groupPhoto = 'assets/img/gamingtemp.jpg';
   }
 
   ngOnInit() {
