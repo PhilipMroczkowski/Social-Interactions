@@ -9,7 +9,7 @@ export class GroupComponent implements OnInit {
 
   id : number;
   groupName: string;
-  tags: string;
+  tags: string[];
   groupCategory : string;
   groupSubCategory : string;
   purpose : string;
@@ -19,7 +19,14 @@ export class GroupComponent implements OnInit {
   groupCount : number;
   groupPhoto : string;
 
-  constructor() { }
+  constructor() { 
+    this.groupName = 'sample name';
+    this.tags = ['Gaming', 'Sports', 'Food'];
+    this.groupCategory = 'Playing Games';
+    this.groupSubCategory = 'Social';
+    this.groupAdmin = 'user name';
+    this.groupDescription = 'This is a sample group!';
+  }
 
   ngOnInit() {
   }
