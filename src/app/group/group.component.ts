@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {GroupService} from '../shared/group.service';
+import {Group} from '../shared/group';
+
 
 @Component({
   selector: 'app-group',
@@ -7,29 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupComponent implements OnInit {
 
-  id : number;
-  groupName: string;
-  tags: string[];
-  groupCategory : string;
-  groupSubCategory : string;
-  purpose : string;
-  memberType : string;
-  groupAdmin : string;
-  groupDescription : string;
-  groupCount : number;
-  groupPhoto : string;
+  
 
-  constructor() { 
-    this.groupName = 'sample group name';
-    this.tags = ['Gaming', 'Sports', 'Food'];
-    this.groupCategory = 'Playing Games';
-    this.groupSubCategory = 'Social';
-    this.groupAdmin = 'user name';
-    this.groupDescription = 'This is a sample group!';
-    this.groupPhoto = 'assets/img/gamingtemp.jpg';
+  constructor(public groupService:GroupService, public group:Group) { 
+    
   }
 
   ngOnInit() {
+    this.group = this.groupService.getGroup();
   }
 
 }
