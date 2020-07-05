@@ -36,17 +36,17 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src={{groupPhoto}} alt="" />
+                <img class="masthead-avatar mb-5" src={{groupService.group.groupPhoto}} alt="" />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">{{groupName}}</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">{{groupService.group.groupName}}</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
-                    <div class="divider-custom-line" *ngFor="let tag of tags">{{tag}}</div>
+                    <div class="divider-custom-line" *ngFor="let tag of groupService.group.tags">{{tag}}</div>
                 </div>
                 </div>
                 <!-- Masthead Subheading-->
                 <div class="masthead-subheading font-weight-light mb-0">
-                    {{groupCategory}} || {{groupSubCategory}}
+                    {{groupService.group.groupCategory}} || {{groupService.group.groupSubCategory}}
                 </div>
         </header>
         <!-- Description Section-->
@@ -60,7 +60,7 @@
                 </div>
                 <div>
                     <div class="col-md-6 col-lg-4 mb-5">
-                        {{groupDescription}}
+                        {{groupService.group.groupDescription}}
                     </div>
                 </div>
             </div>
