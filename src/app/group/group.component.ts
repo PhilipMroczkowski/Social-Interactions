@@ -13,10 +13,14 @@ export class GroupComponent implements OnInit {
   
 
   constructor(public groupService:GroupService, public group:Group) { 
-    
   }
 
   ngOnInit() {
+    console.log("Loaded successfully!");
+    this.getGroup();
+  }
+
+  getGroup(): void {
     this.group = this.groupService.getGroup();
   }
 

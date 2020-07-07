@@ -45,7 +45,8 @@ import { UserService } from './shared/user.service';
   exports: [
     ResetpasswordComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    GroupComponent
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
