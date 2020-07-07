@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GroupComponent } from '../group/group.component';
+import {Group} from '../shared/group';
 
 @Component({
   selector: 'app-request',
@@ -12,7 +13,7 @@ export class RequestComponent implements OnInit {
 
 requestorName : string;
 status : string;
-groupName : GroupComponent['groupName'];
+groupName : Group['groupName'];
 requestDate : Date = new Date((Date.now()));
 
   constructor() { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GroupComponent } from '../group/group.component';
+import {Group} from '../shared/group';
 
 
 @Component({
@@ -12,8 +13,8 @@ export class GroupchatComponent implements OnInit {
   id : number;
   requestToJoin : boolean;
   members : number;
-  groupName : GroupComponent["groupName"];
-  groupId : GroupComponent["id"];
+  groupName : Group["groupName"];
+  groupId : Group["id"];
 
   constructor() { }
 
