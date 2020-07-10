@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import {GroupService} from '../shared/group.service';
 import {Group} from '../shared/group';
+
 
 
 @Component({
@@ -8,6 +9,7 @@ import {Group} from '../shared/group';
   templateUrl: './group.component.html',
   styleUrls: ['./group.component.css']
 })
+@Injectable()
 export class GroupComponent implements OnInit {
 
   
@@ -17,11 +19,12 @@ export class GroupComponent implements OnInit {
 
   ngOnInit() {
     console.log("Loaded successfully!");
-    this.getGroup();
+    this.group = this.getGroup();
   }
 
-  getGroup(): void {
-    this.group = this.groupService.getGroup();
+  getGroup(): Group {
+    group:Group;
+    return this.group;
   }
 
 }

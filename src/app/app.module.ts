@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule}from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule }from '@angular/common/http'
 import { BrowserAnimationsModule} from'@angular/platform-browser/animations';
-import {ToastrModule} from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +20,7 @@ import { EventComponent } from './event/event.component';
 import { EventpicturesComponent } from './eventpictures/eventpictures.component';
 import { HeaderComponent } from './header/header.component';
 import { UserService } from './shared/user.service';
+import { GroupService } from './shared/group.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { UserService } from './shared/user.service';
     SignUpComponent,
     GroupComponent
   ],
-  providers: [UserService],
+  providers: [UserService, GroupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
