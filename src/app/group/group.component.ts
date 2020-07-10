@@ -1,30 +1,38 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import {GroupService} from '../shared/group.service';
-import {Group} from '../shared/group';
-
-
+import { Component, OnInit } from '@angular/core';
+import { Group } from '../shared/group';
 
 @Component({
   selector: 'app-group',
   templateUrl: './group.component.html',
   styleUrls: ['./group.component.css']
 })
-@Injectable()
 export class GroupComponent implements OnInit {
 
-  
+  id : number;
+  groupName: string;
+  tags: string[];
+  groupCategory : string;
+  groupSubCategory : string;
+  purpose : string;
+  memberType : string;
+  groupAdmin : string;
+  groupDescription : string;
+  groupCount : number;
+  groupPhoto : string;
 
-  constructor(public groupService:GroupService, public group:Group) { 
+  constructor() { 
+    this.groupName = 'sample group name';
+    this.tags = ['Gaming', 'Sports', 'Food'];
+    this.groupCategory = 'Playing Games';
+    this.groupSubCategory = 'Social';
+    this.groupAdmin = 'user name';
+    this.groupDescription = 'This is a sample group!';
+    this.groupPhoto = 'assets/img/gamingtemp.jpg';
   }
 
   ngOnInit() {
-    console.log("Loaded successfully!");
-    this.group = this.getGroup();
   }
 
-  getGroup(): Group {
-    group:Group;
-    return this.group;
-  }
+
 
 }
