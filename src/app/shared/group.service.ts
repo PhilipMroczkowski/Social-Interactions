@@ -1,27 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Group } from './group';
 import {Observable, of} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GroupService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  group:Group={
-  id : null,
-  groupName: null,
-  tags:null,
-  groupCategory : null,
-  groupSubCategory : null,
-  purpose : null,
-  memberType : null,
-  groupAdmin : null,
-  groupDescription : null,
-  groupCount : null,
-  groupPhoto : null
-  }
+  private url = 'https://lit-ocean-67937.herokuapp.com/group/'
 
-getGroup(): void{}
+
+getGroup(id): Observable<Group[]> {
+  return this.http.get<Group[]>(this.url + id);
+}
 }
