@@ -13,7 +13,7 @@ export class RequestComponent implements OnInit {
 
 requestorName : string;
 status : string;
-groupName : Group['groupName'];
+groupName : Group['name'];
 requestDate : Date = new Date((Date.now()));
 
   constructor() { }

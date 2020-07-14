@@ -1,14 +1,14 @@
 export class Group {
 
   id : number;
-  groupName: string;
+  name: string;
   tags: string[];
-  groupCategory : string;
-  groupSubCategory : string;
+  category : string;
+  subCategory : string;
   purpose : string;
   memberType : string;
-  groupAdmin : string;
-  groupDescription : string;
-  groupCount : number;
-  groupPhoto : string;
+  admin : string;
+  description : string;
+  numMembers : number;
+  groupCoverPhoto : string;
 }

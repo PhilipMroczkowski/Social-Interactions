@@ -36,7 +36,8 @@ export class GroupComponent implements OnInit {
     this.groupSubscription = this.gs.getGroup(1)
     .subscribe(
       group => this.group = group[0],
-      function(err){console.log('unable to get group');
+      function(err) {
+        console.log('unable to get group');
       }
     );
   }
