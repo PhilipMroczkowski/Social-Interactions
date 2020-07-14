@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col s8 offset-s2">
+      <div class="card">
+          <div class="sm-jumbotron center-align">
+            <h2>User Registration </h2>
+          </div>
+          <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" class="validate" name="UserName" #UserName="ngModel" [(ngModel)]="userService.user.UserName" required >
+                <label data-error="Required Field!">UserName</label>
+              </div>
+              <div class="input-field col s6">
+                  <input type="password" class="validate" name="Password" #Password="ngModel" [(ngModel)]="userService.user.Password" required minlength="3">
+                  <label [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required Field!':'Minimum 3 characters needed'):''">Password</label>
+              </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="Email" class="validate" #Email="ngModel" [(ngModel)]="userService.user.Email" [pattern]="emailPattern" >
+                  <label data-error="Invalid Email">Email</label>
+                </div>
+              </div>
+            <div class="row">
+                <div class="input-field col s6">
+                  <input type="text" name="FirstName" #FirstName="ngModel" [(ngModel)]="userService.user.FirstName" >
+                  <label>FirstName</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" name="LastName" #LastName="ngModel" [(ngModel)]="userService.user.LastName" >
+                    <label>LastName</label>
+                </div>
+                <label for="exampleInput">Enter Birthdate</label>
+                <input type="date" id="birthdayInput" name="input" ng-model="Birthdate.value"
+                    placeholder="yyyy-MM-dd" min="1950-01-01" max="2004-01-01" required />
+                <div role="alert">
+                  <span class="error" ng-show="myForm.input.$error.required">
+                      Required!</span>
+                  <span class="error" ng-show="myForm.input.$error.date">
+                      Not a valid date!</span>
+                 </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <button class="btn-large btn-submit" type="submit" [disabled]="!userRegistrationForm.valid">Submit</button>
+              </div>
+            </div>
+          </form>
+      </div>
+    </div>
+    </div>
