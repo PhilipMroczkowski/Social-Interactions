@@ -21,6 +21,7 @@ import { EventpicturesComponent } from './eventpictures/eventpictures.component'
 import { HeaderComponent } from './header/header.component';
 import { UserService } from './shared/user.service';
 import { GroupService } from './shared/group.service';
+import { CreateGroupComponent } from './create-group/create-group.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { GroupService } from './shared/group.service';
     MessageComponent,
     EventComponent,
     EventpicturesComponent,
-    HeaderComponent
+    HeaderComponent,
+    CreateGroupComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule,ToastrModule.forRoot(),BrowserAnimationsModule
