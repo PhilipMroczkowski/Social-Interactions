@@ -21,7 +21,12 @@ import { EventpicturesComponent } from './eventpictures/eventpictures.component'
 import { HeaderComponent } from './header/header.component';
 import { UserService } from './shared/user.service';
 import { GroupService } from './shared/group.service';
+<<<<<<< HEAD
 import { CreateGroupComponent } from './create-group/create-group.component';
+=======
+import { MapComponent } from './map/map.component';
+import { CalendarComponent } from './calendar/calendar.component';
+>>>>>>> bc4c6dbb6f05e1fc558f1ae83c27f5dd7cf4285a
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { CreateGroupComponent } from './create-group/create-group.component';
     EventComponent,
     EventpicturesComponent,
     HeaderComponent,
+<<<<<<< HEAD
     CreateGroupComponent
+=======
+    MapComponent,
+    CalendarComponent
+>>>>>>> bc4c6dbb6f05e1fc558f1ae83c27f5dd7cf4285a
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule,ToastrModule.forRoot(),BrowserAnimationsModule
