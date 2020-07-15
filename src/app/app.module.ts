@@ -22,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserService } from './shared/user.service';
 import { GroupService } from './shared/group.service';
 import { MapComponent } from './map/map.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MapComponent } from './map/map.component';
     EventComponent,
     EventpicturesComponent,
     HeaderComponent,
-    MapComponent
+    MapComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule,ToastrModule.forRoot(),BrowserAnimationsModule
