@@ -26,6 +26,7 @@ import { CreateGroupComponent } from './create-group/create-group.component';
 //=======
 import { MapComponent } from './map/map.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 //>>>>>>> bc4c6dbb6f05e1fc558f1ae83c27f5dd7cf4285a
 
 @NgModule({
@@ -53,7 +54,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 //>>>>>>> bc4c6dbb6f05e1fc558f1ae83c27f5dd7cf4285a
   ],
   imports: [
-    BrowserModule,FormsModule,HttpClientModule,ToastrModule.forRoot(),BrowserAnimationsModule
+    BrowserModule,FormsModule,HttpClientModule,ToastrModule.forRoot(),BrowserAnimationsModule, GoogleMapsModule
   ],
   exports: [
     ResetpasswordComponent,
