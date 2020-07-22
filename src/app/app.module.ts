@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
 import { AppRoutingModule } from './app-routing.module';
+=======
+>>>>>>> ca86f487b2b3a8e5c3f9c103958476488e22146d
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }from '@angular/common/http'
@@ -55,18 +58,27 @@ import { GoogleMapsModule } from '@angular/google-maps';
 //>>>>>>> bc4c6dbb6f05e1fc558f1ae83c27f5dd7cf4285a
   ],
   imports: [
+<<<<<<< HEAD
     BrowserModule,AppRoutingModule, FormsModule,HttpClientModule,ToastrModule.forRoot(),BrowserAnimationsModule, GoogleMapsModule
+=======
+    BrowserModule,FormsModule,HttpClientModule,ToastrModule.forRoot(),BrowserAnimationsModule, GoogleMapsModule
+>>>>>>> ca86f487b2b3a8e5c3f9c103958476488e22146d
   ],
   exports: [
     ResetpasswordComponent,
     LoginComponent,
     SignUpComponent,
+<<<<<<< HEAD
     GroupComponent,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
   ], 
+=======
+    GroupComponent
+  ],
+>>>>>>> ca86f487b2b3a8e5c3f9c103958476488e22146d
   providers: [UserService, GroupService],
   bootstrap: [AppComponent]
 })

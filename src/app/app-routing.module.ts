@@ -8,6 +8,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
 import {ProfileComponent } from './profile/profile.component'
 import { UserComponent } from './user/user.component';
 import { EventComponent } from './event/event.component';
@@ -23,6 +24,17 @@ const routes: Routes = [
   { path: 'events' , component: EventComponent},
 
  
+=======
+
+
+const routes: Routes = [
+  { path: 'Login', component: LoginComponent},
+  { path: 'SignUp', component: SignUpComponent},
+  { path: 'ResetPassword', component: ResetpasswordComponent},
+  { path: 'Group', component: GroupComponent }
+  { path: 'CreateGroup', component: CreateGroupComponent }
+
+>>>>>>> ca86f487b2b3a8e5c3f9c103958476488e22146d
 ];
 
 @NgModule({
