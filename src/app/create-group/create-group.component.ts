@@ -15,19 +15,29 @@ export class CreateGroupComponent implements OnInit {
   constructor(public groupService:GroupService, private toastr:ToastrService) { }
 
   ngOnInit() {
-    //this.resetForm();
+    this.resetForm();
   }
-/*
+
   resetForm(form?:NgForm){
     if(form !=null)
     form.reset();
     this.groupService.group={
-      
+      name: ' ',
+      tags: [' '],
+      category: ' ',
+      subCategory: ' ',
+      purpose: ' ',
+      memberType: ' ',
+    admin: ' ',
+    description: ' ',
+    numMembers: 0,
+    groupCoverPhoto: ' ',
+    id: 0
     }
   }
 
   OnSubmit(form:NgForm){
-    this.groupService.CreateGroup(form.value)
+    this.groupService.createGroup(form.value)
     .subscribe((data:any)=>{
       if(data.Succeeded==true)
       {
@@ -38,6 +48,6 @@ export class CreateGroupComponent implements OnInit {
       this.toastr.error(data.Errors[0]);
     }
     });
-  }*/
+  }
 
 }

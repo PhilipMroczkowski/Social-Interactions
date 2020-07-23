@@ -1,1 +1,11 @@
-<p>map works!</p>
+<google-map
+    height = "350px"
+    width = "100%"
+    [zoom]="zoom"
+    [center]="center"
+    [options]="options">
+    <map-marker [position]="markerPosition">
+    </map-marker>
+</google-map>
+
+
