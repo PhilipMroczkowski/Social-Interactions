@@ -1,8 +1,14 @@
 export class User {
-    UserName:string;
-    Password:string;
-    Email:string;
-    FirstName:string;
-    LastName:string;
-    BirthDate:Date;
+    name: string;
+    username:string;
+    password:string;
+    email:string;
+    phoneNumber:string;
+    address: string;
+    postalCode: string;
+    favouriteEvents: string;
+    favouriteGroups: string;
+    joinedGroups: string;
+    birthDate:Date;
+    interests: string;
 }

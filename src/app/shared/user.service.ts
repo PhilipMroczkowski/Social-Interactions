@@ -30,6 +30,6 @@ export class UserService {
       LastName:user.LastName,
       BirthDate:user.BirthDate
     }
-    return this.http.post(this.rootUrl +'/api/User/Register',body);
+    return this.http.post(this.rootUrl +'/User/Create',body);
   }
   }
