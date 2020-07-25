@@ -37,13 +37,24 @@ import { AlertComponent } from './components/alert.component';
 
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule, 
+    FormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    GoogleMapsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+   // routing
+  ],
   declarations: [
     AppComponent,
     UserComponent,
     LoginComponent,
     RegisterComponent,
     AlertComponent,
-    ReactiveFormsModule,
     ConfirmaccountComponent,
     OnetimeuseComponent,
     ResetpasswordComponent,
@@ -62,18 +73,7 @@ import { AlertComponent } from './components/alert.component';
     CalendarComponent
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule, 
-    FormsModule,
-    HttpClientModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule,
-    GoogleMapsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-   // routing
-  ],
+
   exports: [
     ResetpasswordComponent,
     LoginComponent,
