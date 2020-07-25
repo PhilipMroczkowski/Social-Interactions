@@ -7,7 +7,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { AlertService } from '../services/alert.service';
 
 @Component({templateUrl: 'signup.component.html'})
-export class SignUpComponent implements OnInit {
+export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
     submitted = false;

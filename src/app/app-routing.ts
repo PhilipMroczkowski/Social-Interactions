@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { GroupComponent } from './group/group.component';
 import {CreateGroupComponent} from './create-group/create-group.component';
-import { SignUpComponent } from './signup/signup.component';
+import { RegisterComponent } from './signup/signup.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
@@ -16,7 +16,7 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
  
   { path: 'login', component: LoginComponent},
-  { path: 'signup', component: SignUpComponent},
+  { path: 'signup', component: RegisterComponent},
   { path: 'resetpassword', component: ResetpasswordComponent},
   { path: 'group', component: GroupComponent}, 
   { path: 'creategroup', component: CreateGroupComponent},
@@ -36,6 +36,8 @@ const routes: Routes = [
   FormsModule , 
   ReactiveFormsModule 
   ],
+  
   exports: [RouterModule]
+  
 })
 export class AppRoutingModule { }

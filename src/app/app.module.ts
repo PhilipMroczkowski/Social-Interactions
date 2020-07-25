@@ -5,13 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS }from '@angular/common/http'
 import { BrowserAnimationsModule} from'@angular/platform-browser/animations';
-
+import { ReactiveFormsModule }    from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './signup/signup.component';
+import { RegisterComponent } from './signup/signup.component';
 import { ConfirmaccountComponent } from './confirmaccount/confirmaccount.component';
 import { OnetimeuseComponent } from './onetimeuse/onetimeuse.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
@@ -26,13 +26,14 @@ import { HeaderComponent } from './header/header.component';
 import { UserService } from './services/user.service';
 import { GroupService } from './shared/group.service';
 import { CreateGroupComponent } from './create-group/create-group.component';
-
+//import { routing }        from './app-routing';
 import { MapComponent } from './map/map.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
+import { AlertComponent } from './components/alert.component';
 
 
 @NgModule({
@@ -40,7 +41,9 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
     AppComponent,
     UserComponent,
     LoginComponent,
-    SignUpComponent,
+    RegisterComponent,
+    AlertComponent,
+    ReactiveFormsModule,
     ConfirmaccountComponent,
     OnetimeuseComponent,
     ResetpasswordComponent,
@@ -60,12 +63,21 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
 
   ],
   imports: [
-    BrowserModule,AppRoutingModule, FormsModule,HttpClientModule,ToastrModule.forRoot(),BrowserAnimationsModule, GoogleMapsModule
+    BrowserModule,
+    AppRoutingModule, 
+    FormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    GoogleMapsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+   // routing
   ],
   exports: [
     ResetpasswordComponent,
     LoginComponent,
-    SignUpComponent,
+    RegisterComponent,
     GroupComponent,
     BrowserModule,
     AppRoutingModule,
