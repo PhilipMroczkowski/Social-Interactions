@@ -1,51 +1,37 @@
-<div class="row">
-    <div class="col s8 offset-s2">
-      <div class="card">
-          <div class="sm-jumbotron center-align">
-            <h2>User Registration </h2>
-          </div>
-          <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
-            <div class="row">
-              <div class="input-field col s6">
-                <input type="text" class="validate" name="UserName" #UserName="ngModel" [(ngModel)]="userService.user.UserName" required >
-                <label data-error="Required Field!">UserName</label>
-              </div>
-              <div class="input-field col s6">
-                  <input type="password" class="validate" name="Password" #Password="ngModel" [(ngModel)]="userService.user.Password" required minlength="3">
-                  <label [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required Field!':'Minimum 3 characters needed'):''">Password</label>
-              </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                  <input type="text" name="Email" class="validate" #Email="ngModel" [(ngModel)]="userService.user.Email" [pattern]="emailPattern" >
-                  <label data-error="Invalid Email">Email</label>
-                </div>
-              </div>
-            <div class="row">
-                <div class="input-field col s6">
-                  <input type="text" name="FirstName" #FirstName="ngModel" [(ngModel)]="userService.user.FirstName" >
-                  <label>FirstName</label>
-                </div>
-                <div class="input-field col s6">
-                    <input type="text" name="LastName" #LastName="ngModel" [(ngModel)]="userService.user.LastName" >
-                    <label>LastName</label>
-                </div>
-                <label for="exampleInput">Enter Birthdate</label>
-                <input type="date" id="birthdayInput" name="input" ng-model="Birthdate.value"
-                    placeholder="yyyy-MM-dd" min="1950-01-01" max="2004-01-01" required />
-                <div role="alert">
-                  <span class="error" ng-show="myForm.input.$error.required">
-                      Required!</span>
-                  <span class="error" ng-show="myForm.input.$error.date">
-                      Not a valid date!</span>
-                 </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <button class="btn-large btn-submit" type="submit" [disabled]="!userRegistrationForm.valid">Submit</button>
-              </div>
-            </div>
-          </form>
-      </div>
+<h2>Register</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+        </div>
     </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
     </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Register</button>
+        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <a routerLink="/login" class="btn btn-link">Cancel</a>
+    </div>
+</form>

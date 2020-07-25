@@ -11,16 +11,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import {ProfileComponent } from './profile/profile.component'
 import { UserComponent } from './user/user.component';
 import { EventComponent } from './event/event.component';
-
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
+ 
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignUpComponent},
   { path: 'resetpassword', component: ResetpasswordComponent},
   { path: 'group', component: GroupComponent}, 
   { path: 'creategroup', component: CreateGroupComponent},
-  { path: 'user', component: UserComponent},
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'events' , component: EventComponent},
+  //{ path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 
  
 ];

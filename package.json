@@ -1,6 +1,10 @@
 {
   "name": "my-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhilipMroczkowski/Social-Interactions.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -29,6 +33,7 @@
     "express": "^4.17.1",
     "ngx-toastr": "^12.1.0",
     "node": "^14.5.0",
+    "core-js": "^2.5.7",
     "path": "^0.12.7",
     "rxjs": "^6.6.0",
     "rxjs-compat": "^6.6.0",
@@ -39,6 +44,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.1",
     "@angular/cli": "^10.0.3",
+    "angular2-template-loader": "^0.6.2",
     "@angular/compiler-cli": "^10.0.3",
     "@angular/language-service": "~10.0.2",
     "@types/jasmine": "~3.3.8",
@@ -55,6 +61,9 @@
     "protractor": "~7.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
+    "webpack": "4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
     "typescript": "~3.9.6"
   },
   "engines": {

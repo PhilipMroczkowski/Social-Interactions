@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule }from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS }from '@angular/common/http'
 import { BrowserAnimationsModule} from'@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import { MessageComponent } from './message/message.component';
 import { EventComponent } from './event/event.component';
 import { EventpicturesComponent } from './eventpictures/eventpictures.component';
 import { HeaderComponent } from './header/header.component';
-import { UserService } from './shared/user.service';
+import { UserService } from './services/user.service';
 import { GroupService } from './shared/group.service';
 
 import { CreateGroupComponent } from './create-group/create-group.component';
@@ -28,6 +28,8 @@ import { CreateGroupComponent } from './create-group/create-group.component';
 import { MapComponent } from './map/map.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor';
 
 
 @NgModule({
@@ -67,7 +69,10 @@ import { GoogleMapsModule } from '@angular/google-maps';
     HttpClientModule,
     FormsModule
   ], 
-  providers: [UserService, GroupService],
+  providers: [UserService, GroupService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
