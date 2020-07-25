@@ -8,7 +8,7 @@ import { UserComponent } from '../user/user.component';
 })
 export class ResetpasswordComponent implements OnInit {
 
-  newPassword : UserComponent['password'];
+ // newPassword : UserComponent['password'];
 
   constructor() { }
 
