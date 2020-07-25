@@ -5,8 +5,8 @@ import {FormsModule, NgForm, FormBuilder, Validators, FormGroup} from '@angular/
 
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { AuthenticationService } from '@/services/authentication.service';
-import { AlertService } from '@/services/alert.service';
+import { AuthenticationService } from '../services/authentication.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-signup',

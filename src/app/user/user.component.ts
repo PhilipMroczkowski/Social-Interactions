@@ -10,8 +10,8 @@ export class UserComponent implements OnInit {
 
   id : number;
   name : string[];
-  username : LoginComponent["username"];
-  password : LoginComponent["password"];
+  //username : LoginComponent["username"];
+  //password : LoginComponent["password"];
   eventSet : string[];
   groupSet : string[];
   interests : string[];
