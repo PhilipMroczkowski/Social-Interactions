@@ -2,9 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS }from '@angular/common/http'
 import { BrowserAnimationsModule} from'@angular/platform-browser/animations';
+
 import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
@@ -22,12 +25,12 @@ import { EventpicturesComponent } from './eventpictures/eventpictures.component'
 import { HeaderComponent } from './header/header.component';
 import { UserService } from './services/user.service';
 import { GroupService } from './shared/group.service';
-
 import { CreateGroupComponent } from './create-group/create-group.component';
 
 import { MapComponent } from './map/map.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 
