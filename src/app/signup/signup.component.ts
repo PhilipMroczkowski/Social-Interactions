@@ -6,11 +6,8 @@ import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../services/authentication.service';
 import { AlertService } from '../services/alert.service';
 
-<<<<<<< HEAD
 @Component({templateUrl: 'signup.component.html', selector: 'app-signup'})
-=======
-@Component({templateUrl: 'signup.component.html'})
->>>>>>> 04a2e025d87e27a1f67003315ac0d483e4662028
+
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
