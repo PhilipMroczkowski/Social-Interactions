@@ -6,7 +6,11 @@ import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from '../services/authentication.service';
 
 
+<<<<<<< HEAD
 @Component({templateUrl: 'login.component.html', selector: 'app-login'})
+=======
+@Component({templateUrl: 'login.component.html'})
+>>>>>>> 04a2e025d87e27a1f67003315ac0d483e4662028
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;

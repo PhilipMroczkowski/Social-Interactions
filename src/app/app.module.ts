@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
 import { AppRoutingModule } from './app-routing.module';
+=======
+import { AppRoutingModule } from './app-routing';
+>>>>>>> 04a2e025d87e27a1f67003315ac0d483e4662028
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
