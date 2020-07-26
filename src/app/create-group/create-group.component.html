@@ -1,0 +1,43 @@
+<
+    <div class="row">
+    <div class="col s8 offset-s2">
+      <div class="card">
+          <div class="sm-jumbotron center-align">
+            <h2>Create Group </h2>
+          </div>
+          <form class="col s12 white" #groupCreateForm="ngForm" (ngSubmit)="OnSubmit(groupCreateForm)">
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" class="validate" name="GroupName" #GroupName="ngModel" [(ngModel)]="groupService.group.name" required >
+                <label data-error="Required Field!">GroupName</label>
+              </div>
+              <div class="input-field col s6">
+                  <input type="text" class="validate" name="Category" #Category="ngModel" [(ngModel)]="groupService.group.category" required minlength="3">
+                  <label data-error="Required Field!">Category</label>
+              </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="SubCategory" class="validate" #SubCategory="ngModel" [(ngModel)]="groupService.group.subCategory">
+                  <label data-error="Required Field!">SubCategory</label>
+                </div>
+              </div>
+            <div class="row">
+                <div class="input-field col s6">
+                  <input type="text" name="Purpose" #Purpose="ngModel" [(ngModel)]="groupService.group.purpose" >
+                  <label>Purpose</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" name="Description" #Description="ngModel" [(ngModel)]="groupService.group.description" >
+                    <label>Description</label>
+                </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <button class="btn-large btn-submit" type="submit" [disabled]="!groupCreateForm.valid">Submit</button>
+              </div>
+            </div>
+          </form>
+      </div>
+    </div>
+    </div>
