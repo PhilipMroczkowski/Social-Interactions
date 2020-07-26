@@ -36,6 +36,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { AlertComponent } from './components/alert.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { AlertComponent } from './components/alert.component';
     CreateGroupComponent,
 
     MapComponent,
-    CalendarComponent
+    CalendarComponent,
+    CreateEventComponent
 
   ],
 

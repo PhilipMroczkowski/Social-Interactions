@@ -1,0 +1,36 @@
+.container {
+    border-right: transparent;
+    border-style: ridge;
+  }
+  
+  .col-md-6 {
+    border-right: ridge;
+  }
+  
+  label {
+    font-weight: 500;
+  }
+  
+  #specialStyle {
+    margin: 10px;
+  }
+  
+  #notice {
+    font-style: italic;
+  }
+  
+  .submitFile {
+    border: solid black 1px;
+  }
+  
+  #fileNotice {
+    font-size: smaller;
+    font-weight: 500;
+  }
+  
+  #fileFurtherNotice {
+    color: gray;
+    font-size: smaller;
+  }
+  
+  
