@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
                     this.loading = false;
                 });
     }
-}
+} 
 
 
 /*resetForm(form?:NgForm){
