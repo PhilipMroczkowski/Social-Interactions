@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-<<<<<<< HEAD
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { NgModule } from '@angular/core';
