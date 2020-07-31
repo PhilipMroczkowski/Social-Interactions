@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^10.0.5",
     "@angular/router": "^10.0.5",
     "angular": "^1.8.0",
+    "bootstrap": "^4.5.0",
     "core-js": "^2.5.7",
     "express": "^4.17.1",
     "ngx-toastr": "^12.1.0",
