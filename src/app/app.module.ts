@@ -26,7 +26,7 @@ import { EventComponent } from './event/event.component';
 import { EventpicturesComponent } from './eventpictures/eventpictures.component';
 import { HeaderComponent } from './header/header.component';
 import { UserService } from './services/user.service';
-import { GroupService } from './shared/group.service';
+import { GroupService } from './services/group.service';
 import { CreateGroupComponent } from './create-group/create-group.component';
 //import { routing }        from './app-routing';
 import { MapComponent } from './map/map.component';
