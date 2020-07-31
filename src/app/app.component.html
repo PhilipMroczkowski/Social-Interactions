@@ -1,27 +1,28 @@
 
 <!-- <div class="container"> -->
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
   
-
-<body>
+   <!--Bootstrap 4.5 CDN-->
+   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
   
 <div class="container">
 
   
   <nav>
-    <div class="header">
-      <h1><b><i>Social Interactions</i></b></h1>
-      <div class="header-right">
+    <h1><b><i>Social Interactions</i></b></h1>
+    <div class="collapse navbar-collapse navbar-right">
+      <ul class="nav navbar-nav">
           <li><a routerLink="/signup" routerLinkActive="active">Sign Up</a></li> 
           <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
           <li><a routerLink="/group" routerLinkActive="active">Groups</a></li>
           <li><a routerLink="/user" routerLinkActive="active">Profile</a></li>
           
-        </div>
+      </ul>
     </div>
   </nav> 
- 
+  </div>
+
 
 <!--  
 <section id="feature" >
@@ -64,9 +65,8 @@
 
 
 </div> -->
-<!-- </div>
-</body> -->
-<!--<router-outlet></router-outlet> -->
+<!-- </div>-->
+<router-outlet></router-outlet>
 
 <!-- <div class="color-border"><app-signup></app-signup></div>
 </div> -->
