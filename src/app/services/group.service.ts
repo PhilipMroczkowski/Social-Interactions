@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Group } from './group';
+import { Group } from '../group/group';
 import {Observable, of} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -23,5 +23,9 @@ createGroup(group:Group){
 
 getGroup(id): Observable<Group[]> {
   return this.http.get<Group[]>(this.url + id);
+}
+
+getAllGroups(): Observable<Group[]>{
+  return this.http.get<Group[]>(this.url);
 }
 }

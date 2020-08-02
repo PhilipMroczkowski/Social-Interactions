@@ -1,4 +1,4 @@
-import { Group } from './group';
+import { Group } from '../group/group';
 
 describe('Group', () => {
   it('should create an instance', () => {

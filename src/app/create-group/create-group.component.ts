@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GroupService} from'../shared/group.service';
+import {GroupService} from'../services/group.service';
 import {FormsModule, NgForm} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 
