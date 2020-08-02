@@ -1,0 +1,26 @@
+
+
+<head>
+   
+    <title>Group Dashboard</title>
+</head>
+
+<body>
+<div class="center">
+    <h2><b>Group Dashboard!!!!!</b></h2>
+    <p class="lead">Your chance to explore and be a part of amazing groups</p>
+</div>
+
+<div class="container">
+    <input class="form-control" id="GroupSearch" name="GroupSearch" type="text" placeholder="Search a Group" 
+                (keyup)="onGroupSearchKeyUP($event)" /><br />
+
+                <ul *ngFor='let group of filteredGroups' (click) = "routeGroup(group.id)">
+                    <li>{{group.name}}</li>
+                    <li>{{group.category}} , {{group.subCategory}}</li>
+                    <li>{{group.description}}</li>
+                </ul>
+</div>
+
+</body>
+
