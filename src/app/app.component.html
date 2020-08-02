@@ -4,7 +4,7 @@
   
    <!--Bootstrap 4.5 CDN-->
    
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">  
   
 <div class="container">
 
@@ -15,13 +15,15 @@
       <ul class="nav navbar-nav">
           <li><a routerLink="/signup" routerLinkActive="active">Sign Up</a></li> 
           <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-          <li><a routerLink="/group" routerLinkActive="active">Groups</a></li>
+          <li><a routerLink="/groups" routerLinkActive="active">Groups</a></li>
           <li><a routerLink="/user" routerLinkActive="active">Profile</a></li>
+ 
           
       </ul>
     </div>
   </nav> 
   </div>
+  <router-outlet></router-outlet>
 
 
 <!--  
@@ -66,7 +68,6 @@
 
 </div> -->
 <!-- </div>-->
-<router-outlet></router-outlet>
 
 <!-- <div class="color-border"><app-signup></app-signup></div>
 </div> -->

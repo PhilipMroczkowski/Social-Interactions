@@ -24,3 +24,8 @@ p{
     font-size: x-large;
     color: darkred;
 }
+
+nav li{
+    font-weight: bolder;
+    color: black;
+}

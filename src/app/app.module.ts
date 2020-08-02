@@ -15,13 +15,10 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './signup/signup.component';
 import { ConfirmaccountComponent } from './confirmaccount/confirmaccount.component';
-import { OnetimeuseComponent } from './onetimeuse/onetimeuse.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GroupComponent } from './group/group.component';
-import { RequestComponent } from './request/request.component';
-import { GroupchatComponent } from './groupchat/groupchat.component';
-import { MessageComponent } from './message/message.component';
+
 import { EventComponent } from './event/event.component';
 import { EventpicturesComponent } from './eventpictures/eventpictures.component';
 import { HeaderComponent } from './header/header.component';
@@ -37,6 +34,9 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { AlertComponent } from './components/alert.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { GroupDashboardComponent } from './group-dashboard/group-dashboard.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -59,13 +59,11 @@ import { CreateEventComponent } from './create-event/create-event.component';
     RegisterComponent,
     AlertComponent,
     ConfirmaccountComponent,
-    OnetimeuseComponent,
+
     ResetpasswordComponent,
     ProfileComponent,
     GroupComponent,
-    RequestComponent,
-    GroupchatComponent,
-    MessageComponent,
+
     EventComponent,
     EventpicturesComponent,
     HeaderComponent,
@@ -74,7 +72,10 @@ import { CreateEventComponent } from './create-event/create-event.component';
 
     MapComponent,
     CalendarComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    GroupDashboardComponent,
+    PageNotFoundComponent,
+    HomeComponent
 
   ],
 
