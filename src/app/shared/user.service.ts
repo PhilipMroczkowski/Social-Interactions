@@ -22,6 +22,7 @@ export class UserService {
   }
 
   registerUser(user:User){
+    // TODO: change register user function and user.ts to comply with actual sql table
     const body:User={
       UserName:user.UserName,
       Password:user.Password,
