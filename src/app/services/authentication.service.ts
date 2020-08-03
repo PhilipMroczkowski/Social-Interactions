@@ -14,13 +14,13 @@ export class AuthenticationService {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
     }
-
+    private apiUrl = 'https://lit-ocean-67937.herokuapp.com'
     public get currentUserValue(): User {
         return this.currentUserSubject.value;
     }
 
     login(username: string, password: string) {
-        return this.http.post<any>(`${config.apiUrl}/users/authenticate`, { username, password })
+        return this.http.post<any>(this.apiUrl+`/user/authenticate`, { username, password })
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {
