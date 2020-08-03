@@ -37,6 +37,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { GroupDashboardComponent } from './group-dashboard/group-dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { HomeComponent } from './home/home.component';
     CreateEventComponent,
     GroupDashboardComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
 
   ],
 

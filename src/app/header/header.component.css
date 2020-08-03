@@ -1,0 +1,32 @@
+div {
+    display: flex;
+    justify-content: left;
+    position: relative;
+  }
+
+h1{
+  text-align: left;
+  color:#eb5454c0;
+  font-weight:50;
+}
+
+.btn{
+  
+  color:rgb(0, 0, 0);
+  background:rgba(255, 255, 255, 0.5);
+  padding:20px 20px;
+  right: 0;
+  font-size:12px;
+  line-height: 0em;
+  text-decoration:none;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.btn:hover{
+  border:none;
+  background:rgba(0, 0, 0, 0.4);
+  background:#fff;
+  padding:20px 20px;
+  color:#1b1b1b;
+}
