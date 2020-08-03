@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'groups', component: GroupDashboardComponent},
   { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'events' , component: EventComponent},
+  { path: '' , component: LoginComponent},
   //{ path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 
