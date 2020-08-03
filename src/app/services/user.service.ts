@@ -1,29 +1,51 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserModel } from '../models/user.model';
+import {User} from '../models/user';
 
-import { User } from '../models/user';
+
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
     constructor(private http: HttpClient) { }
 
+    private apiUrl = 'https://lit-ocean-67937.herokuapp.com'
+
     getAll() {
-        return this.http.get<User[]>(`${config.apiUrl}/users`);
+        return this.http.get<User[]>(this.apiUrl +`/user`);
     }
 
     getById(id: number) {
-        return this.http.get(`${config.apiUrl}/users/${id}`);
+        return this.http.get(this.apiUrl+`/user/${id}`);
     }
 
-    register(user: User) {
-        return this.http.post(`${config.apiUrl}/users/register`, user);
+    
+    register(user: UserModel) {
+        this.generateUser(user);
+
+        return this.http.post(this.apiUrl + `/user/create`, user);
     }
 
     update(user: User) {
-        return this.http.put(`${config.apiUrl}/users/${user.id}`, user);
+        return this.http.put(this.apiUrl+`/user/${user.id}`, user);
     }
 
     delete(id: number) {
-        return this.http.delete(`${config.apiUrl}/users/${id}`);
+        return this.http.delete(this.apiUrl + `/user/${id}`);
+    }
+
+    generateUser(tempUser: UserModel): UserModel {
+    var d = new Date();
+    tempUser.email= 'aaa';
+    tempUser.phoneNumber= 'aaa';
+    tempUser.address= 'aaa';
+    tempUser.postalCode= 'aaa';
+    tempUser.favouriteEvents= 'aaa';
+    tempUser.favouriteGroups= 'aaa';
+    tempUser.joinedGroups= 'aaa';
+    tempUser.birthDate = d;
+    tempUser.interests= 'aaa';
+
+    return tempUser
     }
 }
