@@ -38,6 +38,7 @@ import { GroupDashboardComponent } from './group-dashboard/group-dashboard.compo
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { FooterComponent } from './footer/footer.component';
     GroupDashboardComponent,
     PageNotFoundComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    AboutUsComponent
 
   ],
 
