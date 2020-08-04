@@ -36,7 +36,6 @@ export class UserService {
 
     generateUser(tempUser: UserModel): UserModel {
     var d = new Date();
-    tempUser.email= 'aaa';
     tempUser.phoneNumber= 'aaa';
     tempUser.address= 'aaa';
     tempUser.postalCode= 'aaa';
