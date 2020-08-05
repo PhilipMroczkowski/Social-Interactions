@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'group', component: GroupComponent}, 
   { path: 'creategroup', component: CreateGroupComponent},
   { path: 'groups', component: GroupDashboardComponent},
-  {path: 'creategroup', component: CreateGroupComponent},
+  { path: 'creategroup', component: CreateGroupComponent },
   { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'events' , component: EventComponent},
   { path: '' , component: LoginComponent},
