@@ -16,7 +16,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './signup/signup.component';
 import { ConfirmaccountComponent } from './confirmaccount/confirmaccount.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-import { ProfileComponent } from './profile/profile.component';
 import { GroupComponent } from './group/group.component';
 
 import { EventComponent } from './event/event.component';
@@ -63,7 +62,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ConfirmaccountComponent,
 
     ResetpasswordComponent,
-    ProfileComponent,
     GroupComponent,
 
     EventComponent,
