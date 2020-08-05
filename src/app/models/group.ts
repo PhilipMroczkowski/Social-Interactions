@@ -2,7 +2,7 @@ export class Group {
 
   id : number;
   name: string;
-  tags: string[];
+  tags: string;
   category : string;
   subCategory : string;
   purpose : string;

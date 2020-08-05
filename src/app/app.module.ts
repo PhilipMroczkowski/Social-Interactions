@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS }from '@angular/common/http'
 import { BrowserAnimationsModule} from'@angular/platform-browser/animations';
@@ -52,6 +53,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     GoogleMapsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatRadioModule
    // routing
   ],
   declarations: [
