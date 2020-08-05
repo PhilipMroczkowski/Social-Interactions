@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GroupComponent } from '../group/group.component';
-import {Group} from '../group/group';
+import {Group} from '../models/group';
 
 @Component({
   selector: 'app-request',

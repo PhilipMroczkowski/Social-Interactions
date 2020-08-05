@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { MatRadioModule } from '@angular/material/radio';
 import {GroupService} from'../services/group.service';
-import {FormsModule, NgForm} from '@angular/forms';
-import {ToastrService} from 'ngx-toastr';
+import {FormsModule, NgForm, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { AlertService } from '../services/alert.service';
+import { AuthenticationService } from '../services/authentication.service';
+import { first } from 'rxjs/operators';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-create-group',
@@ -10,43 +15,60 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class CreateGroupComponent implements OnInit {
 
-  //emailPattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+inputMemberType: string;
+
+ memberTypes: string[] = ['All Ages', 'Over 18'];
+
+  createGroupForm: FormGroup;
+  loading = false;
+  submitted = false;
  
-  constructor(public groupService:GroupService, private toastr:ToastrService) { }
+  constructor(private groupService:GroupService, 
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private alertService: AlertService,
+    private authenticationService: AuthenticationService) { 
+      //redirect to login page if not logged in
+      if (!this.authenticationService.currentUserValue) { 
+        this.router.navigate(['/login']);
+    }
+    }
 
   ngOnInit() {
     this.resetForm();
   }
 
   resetForm(form?:NgForm){
-    if(form !=null)
-    form.reset();
-    this.groupService.group={
-      name: ' ',
-      tags: [' '],
-      category: ' ',
-      subCategory: ' ',
-      purpose: ' ',
-      memberType: ' ',
-    admin: ' ',
-    description: ' ',
-    numMembers: 0,
-    groupCoverPhoto: ' ',
-    id: 0
-    }
+    this.createGroupForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      tags: ['', Validators.required],
+      category: ['', Validators.required],
+      subCategory: [''],
+      purpose: ['', [Validators.required, Validators.minLength(6)]],
+      description: ['', Validators.required],
+  });
   }
 
-  OnSubmit(form:NgForm){
-    this.groupService.createGroup(form.value)
-    .subscribe((data:any)=>{
-      if(data.Succeeded==true)
-      {
-      this.resetForm(form);
-      this.toastr.success("Group Succesfully Created!")
+get f() { return this.createGroupForm.controls;}
+
+  OnSubmit(){
+    this.submitted = true;
+
+    if(this.createGroupForm.invalid){
+      return;
     }
-    else{
-      this.toastr.error(data.Errors[0]);
-    }
+
+    this.loading = true;
+
+    this.groupService.createGroup(this.createGroupForm.value)
+    .pipe(first())
+    .subscribe(data => {
+      this.alertService.success('Group created!', true);
+      this.router.navigate(['/group']);
+    },
+    error => {
+      this.alertService.error(error);
+      this.loading= false;
     });
   }
 
