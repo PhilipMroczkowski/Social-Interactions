@@ -9,7 +9,11 @@ h1{
   color:#eb5454c0;
   font-weight:50;
 }
-
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 .btn{
   
   color:rgb(0, 0, 0);
