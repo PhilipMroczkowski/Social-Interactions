@@ -1,4 +1,2 @@
 
-declare var config: {
-    
-};
+declare var config: any;

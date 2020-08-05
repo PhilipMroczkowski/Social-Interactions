@@ -9,7 +9,6 @@ import { RegisterComponent } from './signup/signup.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {ProfileComponent } from './profile/profile.component'
 import { UserComponent } from './user/user.component';
 import { EventComponent } from './event/event.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
