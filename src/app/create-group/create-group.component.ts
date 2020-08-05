@@ -46,6 +46,8 @@ inputMemberType: string;
       subCategory: [''],
       purpose: ['', [Validators.required, Validators.minLength(6)]],
       description: ['', Validators.required],
+      memberType: ['All Ages', Validators.required],
+      groupCoverPhoto: ['http://via.placeholder.com/640x360', Validators.required]
   });
   }
 
@@ -64,7 +66,7 @@ get f() { return this.createGroupForm.controls;}
     .pipe(first())
     .subscribe(data => {
       this.alertService.success('Group created!', true);
-      this.router.navigate(['/group']);
+      this.router.navigate(['/groups']);
     },
     error => {
       this.alertService.error(error);

@@ -16,9 +16,9 @@ export class GroupService {
 group:Group;
 
 createGroup(group:Group){
-  const body:Group=group;
+  this.generateGroup(group);
 
-  return this.http.post(this.rootUrl + '/group/create', body);
+  return this.http.post(this.url + 'create', group);
 }
 
 getGroup(id): Observable<Group[]> {
@@ -27,5 +27,12 @@ getGroup(id): Observable<Group[]> {
 
 getAllGroups(): Observable<Group[]>{
   return this.http.get<Group[]>(this.url);
+}
+
+generateGroup(group: Group): Group{
+  group.numMembers = 1;
+  group.admin = 'User';
+
+  return group;
 }
 }
