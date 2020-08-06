@@ -1,0 +1,8 @@
+#about-us #team{margin-bottom:0;}
+#about-us #team ul{margin:0; padding:0; list-style:none;}
+#about-us #team ul li{margin-bottom:30px;}
+#about-us #team ul li figure{position:relative; text-align:center;}
+#about-us #team ul li figure img{padding:9px; border:1px solid #CCCCCC;}
+#about-us #team ul li figure figcaption{display:none; position:absolute; top:10px; left:10px; width:280px; height:200px; overflow:hidden; color:#FFFFFF; background-color:#000000; background:hsla(0, 0%, 0%, 0.8);}
+#about-us #team ul li:hover figure figcaption{display:block;}
+

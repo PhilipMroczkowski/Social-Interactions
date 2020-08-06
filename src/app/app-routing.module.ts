@@ -14,11 +14,15 @@ import { EventComponent } from './event/event.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import { AuthGuard } from './guards/auth.guard';
 import { EditGroupComponent } from './edit-group/edit-group.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
   
   { path: 'login', component: LoginComponent},
+  { path: 'aboutus', component: AboutUsComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'signup', component: RegisterComponent},
   { path: 'resetpassword', component: ResetpasswordComponent},
   { path: 'group/:_id', component: GroupComponent}, 
