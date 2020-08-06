@@ -15,7 +15,8 @@ export class GroupComponent implements OnInit {
   group: Group;
 
   constructor(
-    private gs: GroupService
+    private gs: GroupService,
+    private ar: ActivatedRoute
   ) { 
     /*this.groupName = 'sample group name';
     this.tags = ['Gaming', 'Sports', 'Food'];
@@ -33,7 +34,12 @@ export class GroupComponent implements OnInit {
       }
     });*/
 
-    this.groupSubscription = this.gs.getGroup(1)
+    this.paramSubscription = this.ar.params.subscribe(params => {
+      this.group.id = params['_id'],
+      function(err){ console.log('unable to get id');}
+    })
+
+    this.groupSubscription = this.gs.getGroup(this.group.id)
     .subscribe(
       group => this.group = group[0],
       function(err) {
