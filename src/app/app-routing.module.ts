@@ -25,13 +25,13 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'signup', component: RegisterComponent},
   { path: 'resetpassword', component: ResetpasswordComponent},
-  { path: 'group/:_id', component: GroupComponent}, 
-  { path: 'creategroup', component: CreateGroupComponent},
-  { path: 'groups', component: GroupDashboardComponent},
-  { path: 'editgroup/:_id', component: EditGroupComponent},
+  { path: 'group/:_id', component: GroupComponent, canActivate: [AuthGuard] }, 
+  { path: 'creategroup', component: CreateGroupComponent, canActivate: [AuthGuard] },
+  { path: 'groups', component: GroupDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'editgroup/:_id', component: EditGroupComponent, canActivate: [AuthGuard] },
   { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'events' , component: EventComponent},
-  { path: '' , component: LoginComponent},
+  { path: '' , component: HomeComponent},
   //{ path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 
