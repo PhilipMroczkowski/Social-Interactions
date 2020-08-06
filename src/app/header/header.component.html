@@ -1,12 +1,14 @@
 <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+
 <div>
   <ul>
     <a href="/" class="btn"> Social Interactions </a>
-    <a  href="/signup" class="btn"  > Sign Up </a>
-    <a  href="/login" class="btn"> Login  </a>
-    <a href="/groups" class="btn"> Groups </a>
-    <a href="/creategroup" class="btn"> Create Group </a>
-    <a href="/user" class="btn" {{currentUser}} > </a>
+    <a *ngIf="!currentUser" href="/signup" class="btn"  > Sign Up </a>
+    <a *ngIf="!currentUser" href="/login" class="btn" onClick="window.location.reload();" > Login  </a>
+    <a *ngIf="currentUser" onClick="window.location.reload();" class="btn" (click)="logout()"> Logout </a>
+    <a *ngIf="currentUser" href="/groups" class="btn"> Groups </a>
+    <a *ngIf="currentUser" href="/creategroup" class="btn"> Create Group </a>
+    <a href="/user" class="btn"  > {{currentUser.username}}</a>
   </ul>
 </div>
 
