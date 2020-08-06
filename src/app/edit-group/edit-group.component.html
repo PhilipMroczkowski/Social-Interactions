@@ -1,0 +1,60 @@
+<h2>Edit Group</h2>
+<form class="container" [formGroup]="editGroupForm" (ngSubmit)="OnSubmit()">
+
+<div class="form-group">
+  <label for="groupCoverPhoto">Group Picture</label>
+  <input type="text" formControlName="groupCoverPhoto" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.groupCoverPhoto.errors }" />
+  <div *ngIf="submitted && f.groupCoverPhoto.errors" class="invalid-feedback">
+      <div *ngIf="f.groupCoverPhoto.errors.required">Please enter a link to your group photo.</div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="category">Category</label>
+  <input type="text" formControlName="category" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.category.errors }" />
+  <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+      <div *ngIf="f.category.errors.required">Category is required</div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="subCategory">Sub Category</label>
+  <input type="text" formControlName="subCategory" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subCategory.errors }" />
+  <div *ngIf="submitted && f.subCategory.errors" class="invalid-feedback">
+      <div *ngIf="f.subCategory.errors.required">Sub Category is required</div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="purpose">Purpose</label>
+  <input type="text" formControlName="purpose" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.purpose.errors }" />
+  <div *ngIf="submitted && f.purpose.errors" class="invalid-feedback">
+      <div *ngIf="f.purpose.errors.required">Group purpose is required, enter a short 1 or 2 sentence purpose.</div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="description">Description</label>
+  <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+  <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+      <div *ngIf="f.description.errors.required">Group description is required, please enter a longer form description than the purpose.</div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="tags">Tags</label>
+  <input type="text" formControlName="tags" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tags.errors }" />
+  <div *ngIf="submitted && f.tags.errors" class="invalid-feedback">
+      <div *ngIf="f.tags.errors.required">Please enter at least one tag.</div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="description">Who are you looking for?</label>
+  <input type="text" formControlName="memberType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.memberType.errors }" />
+  <div *ngIf="submitted && f.memberType.errors" class="invalid-feedback">
+      <div *ngIf="f.memberType.errors.required">Please indicated the type of person you would like to join your group (ie: All Ages, Over 18)</div>
+  </div>
+</div>
+<div class="form-group">
+  <button [disabled]="loading" class="btn btn-primary">Save</button>
+  <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+  <a routerLink="/groups" class="btn btn-link">Cancel</a>
+</div>
+          </form>

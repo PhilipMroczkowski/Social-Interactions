@@ -39,6 +39,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { EditGroupComponent } from './edit-group/edit-group.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     PageNotFoundComponent,
     HomeComponent,
     FooterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    EditGroupComponent
 
   ],
 

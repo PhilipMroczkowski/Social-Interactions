@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { MatRadioModule } from '@angular/material/radio';
 import {GroupService} from'../services/group.service';
-import {FormsModule, NgForm, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {NgForm, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { first } from 'rxjs/operators';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'app-create-group',
@@ -14,10 +12,6 @@ import { from } from 'rxjs';
   styleUrls: ['./create-group.component.css']
 })
 export class CreateGroupComponent implements OnInit {
-
-inputMemberType: string;
-
- memberTypes: string[] = ['All Ages', 'Over 18'];
 
   createGroupForm: FormGroup;
   loading = false;

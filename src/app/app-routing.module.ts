@@ -13,6 +13,7 @@ import { UserComponent } from './user/user.component';
 import { EventComponent } from './event/event.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import { AuthGuard } from './guards/auth.guard';
+import { EditGroupComponent } from './edit-group/edit-group.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path: 'group', component: GroupComponent}, 
   { path: 'creategroup', component: CreateGroupComponent},
   { path: 'groups', component: GroupDashboardComponent},
-  { path: 'creategroup', component: CreateGroupComponent },
+  { path: 'editgroup', component: EditGroupComponent},
   { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'events' , component: EventComponent},
   { path: '' , component: LoginComponent},

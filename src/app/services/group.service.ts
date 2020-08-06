@@ -29,6 +29,10 @@ getAllGroups(): Observable<Group[]>{
   return this.http.get<Group[]>(this.url);
 }
 
+editGroup(group:Group){
+  return this.http.put(this.url + 'edit/' + group.id, group)
+}
+
 generateGroup(group: Group): Group{
   group.numMembers = 1;
   group.admin = 'User';
