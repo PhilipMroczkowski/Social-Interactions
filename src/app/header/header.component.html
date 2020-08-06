@@ -9,11 +9,11 @@
     <a href="/home" class="btn"> Social Interactions </a>
     <a href="/aboutus" class="btn"> About Us </a>
     <a *ngIf="!currentUser" href="/signup" class="btn"  > Sign Up </a>
-    <a *ngIf="!currentUser" href="/login" class="btn" onClick="window.location.reload();" > Login  </a>
+    <a *ngIf="!currentUser" href="/login" class="btn"  > Login  </a>
     <a *ngIf="currentUser" onClick="window.location.reload();" class="btn" (click)="logout()"> Logout </a>
     <a *ngIf="currentUser" href="/groups" class="btn"> Groups </a>
     <a *ngIf="currentUser" href="/creategroup" class="btn"> Create Group </a>
-    <a href="/user" class="btn"> Profile: {{currentUser.username}}</a>
+    <a *ngIf="currentUser" href="/user" class="btn"> Profile </a>
   </ul>
 </div>
 
@@ -21,8 +21,11 @@
 
 
     <!--
+      {{currentUser.username}}
       //Check if current user is logged in
       *ngIf="currentUser"
+      //Refresh window
+      onClick="window.location.reload();"
     <li><a routerLink="/signup" routerLinkActive="active">Sign Up</a></li> 
     <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
     <li><a routerLink="/groups" routerLinkActive="active">Groups</a></li>
