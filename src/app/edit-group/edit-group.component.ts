@@ -70,7 +70,7 @@ get f() { return this.editGroupForm.controls;}
     this.gs.editGroup(this.editGroupForm.value)
     .pipe(first())
     .subscribe(data => {
-      this.alertService.success('Group created!', true);
+      this.alertService.success('Group edited!', true);
       this.router.navigate(['/groups']);
     },
     error => {
