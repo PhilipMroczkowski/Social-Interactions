@@ -2,17 +2,19 @@
 <div>
   <ul>
     <a href="/" class="btn">Social Interactions</a>
-    <a href="/signup" routerLinkActive="active" class="btn" >Sign Up</a>
-    <a href="/login" class="btn">Login</a>
-    <a href="/groups" class="btn">Groups</a>
-    <a href="/creategroup" class="btn">Create Group</a>
-    <a href="/user" class="btn">Signed in as : {{currentUser}}</a>
+    <a  href="/signup" class="btn"  >Sign Up  </a>
+    <a  href="/login" class="btn">Login  </a>
+    <a *ngIf="currentUser" href="/groups" class="btn">Groups</a>
+    <a *ngIf="currentUser" href="/creategroup" class="btn">Create Group</a>
+    <a href="/user" class="btn" {{currentUser}} > </a>
   </ul>
 </div>
 
 
 
     <!--
+      //Check if current user is logged in
+      *ngIf="currentUser"
     <li><a routerLink="/signup" routerLinkActive="active">Sign Up</a></li> 
     <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
     <li><a routerLink="/groups" routerLinkActive="active">Groups</a></li>
