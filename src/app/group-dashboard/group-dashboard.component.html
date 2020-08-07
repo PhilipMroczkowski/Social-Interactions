@@ -14,7 +14,7 @@
                     (keyup)="onGroupSearchKeyUP($event)" /><br />
     
                     <ul *ngFor='let group of filteredGroups' (click) = "routeGroup(group.id)">
-                        <li> {{group.groupCoverPhoto}}</li>
+                        <li> <img src={{group.groupCoverPhoto}} class="img-thumbnail" width="200" height="200"  /></li>
                         <li style="color: rgb(23, 122, 117); font-size: x-large; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><b><i><u>{{group.name}}</u></i></b></li><br>
                         <li><b>Category: </b>{{group.category}} , <b>Sub-category: </b> {{group.subCategory}}</li>
                         <li><b>Sneak Peek: </b>{{group.description}}</li> <hr/>
