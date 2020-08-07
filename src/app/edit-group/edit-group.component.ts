@@ -34,7 +34,7 @@ export class EditGroupComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.resetForm();
+    
 
     this.paramSubscription = this.ar.params.subscribe(params => {
       this.id = params['_id'],
@@ -48,6 +48,8 @@ export class EditGroupComponent implements OnInit {
         console.log('unable to get group');
       }
     );
+
+    this.resetForm();
   }
 
   resetForm(form?:NgForm){
