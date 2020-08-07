@@ -34,3 +34,8 @@ ul {
   padding:20px 20px;
   color:#1b1b1b;
 }
+
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
