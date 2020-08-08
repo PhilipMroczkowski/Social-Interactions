@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 declare var $: any;
 
 @Component({
@@ -6,7 +7,7 @@ declare var $: any;
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, OnDestroy {
  
   zoom = 15;
   center: google.maps.LatLngLiteral;
@@ -22,25 +23,38 @@ export class MapComponent implements OnInit {
   location = {lat: 0, lng: 0};
   address = "70 The Pond Road CA";
 
-  constructor() { 
-   
-  }
+  //Observable
+  geocodingObservable;
+  //Subscription
+  geocodingSupscription: Subscription;
 
-  ngOnInit() {
+  constructor() { 
+   this.geocodingObservable = Observable.create(observer => {
     $.get( "https://maps.googleapis.com/maps/api/geocode/json",
     {address: this.address,
     key: 'AIzaSyCjzt3sPINQt8OMeLnIFOnHUWJFeLjyx20'},
-  function(data) {
-  console.log(data.results[0].geometry.location.lat);
+    function(data) {
+      observer.next(data);
+    });
+   })
+  }
+ 
+  ngOnInit() {
 
-  this.center = {
-    lat: data.results[0].geometry.location.lat,
-    lng: data.results[0].geometry.location.lng,
-  };
-  this.markerPosition = {
-    lat: data.results[0].geometry.location.lat,
-    lng: data.results[0].geometry.location.lng,
-  };
-});
+    this.geocodingSupscription = this.geocodingObservable.subscribe((data)=>{
+      this.center = {
+        lat: data.results[0].geometry.location.lat,
+        lng: data.results[0].geometry.location.lng,
+      };
+      this.markerPosition = {
+        lat: data.results[0].geometry.location.lat,
+        lng: data.results[0].geometry.location.lng,
+      };
+    })
+
+  }
+
+  ngOnDestroy(): void {
+    this.geocodingSupscription.unsubscribe();
   }
 }
