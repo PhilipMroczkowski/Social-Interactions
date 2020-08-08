@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Group } from '../models/group';
 import { GroupService } from '../services/group.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-group',
@@ -16,7 +16,8 @@ export class GroupComponent implements OnInit {
   id: number;
   constructor(
     private gs: GroupService,
-    private ar: ActivatedRoute
+    private ar: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -42,6 +43,8 @@ export class GroupComponent implements OnInit {
       this.groupSubscription.unsubscribe();
   }
 
-
+  viewEvents() {
+    this.router.navigate(['events'], {relativeTo: this.ar});
+  }
 
 }
