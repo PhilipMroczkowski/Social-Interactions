@@ -2,24 +2,14 @@
     <nav class="navbar navbar-light navbar-expand-md d-flex float-none">
         <div class="container"><button data-toggle="collapse" data-target="#navcol-2" class="navbar-toggler"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Previous event</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Next event</a></li>
-                    <li class="nav-item" role="presentation"></li>
-                </ul>
             </div><a class="navbar-brand d-md-flex" href="#"><h4>{{event.name}}</h4></a>
             <div class="collapse navbar-collapse" id="navcol-2">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Notification</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Exit view</a></li>
-                    <li class="nav-item" role="presentation"></li>
-                </ul>
             </div>
         </div>
     </nav>
     <div class="row">
         <div class="col-4">
-            <app-map></app-map>
+            <app-map [address]="event.location"></app-map>
         </div>
         <div class="col-8">
             <div class="row">

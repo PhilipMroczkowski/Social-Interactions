@@ -28,7 +28,10 @@ export class CalendarComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    //Create a Date object based on the string passed via property binding
     this.dateObject = new Date(this.EventDate);
+    this.dateObject.setDate(this.dateObject.getDate() + 1);
+    //
     this.currentMonth = this.dateObject.getMonth();
     this.currentYear = this.dateObject.getFullYear();
     this.createYear = this.generate_year_range(1970, 2050);

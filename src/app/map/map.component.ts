@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 declare var $: any;
 
@@ -8,7 +8,8 @@ declare var $: any;
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit, OnDestroy {
- 
+  @Input() address: string;
+
   zoom = 15;
   center: google.maps.LatLngLiteral;
   options: google.maps.MapOptions = {
@@ -21,8 +22,7 @@ export class MapComponent implements OnInit, OnDestroy {
   };
   markerPosition;
   location = {lat: 0, lng: 0};
-  address = "70 The Pond Road CA";
-
+ 
   //Observable
   geocodingObservable;
   //Subscription
