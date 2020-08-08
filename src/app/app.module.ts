@@ -40,6 +40,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { EditGroupComponent } from './edit-group/edit-group.component';
+import { EventDashboardComponent } from './event-dashboard/event-dashboard.component';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { EditGroupComponent } from './edit-group/edit-group.component';
     HomeComponent,
     FooterComponent,
     AboutUsComponent,
-    EditGroupComponent
+    EditGroupComponent,
+    EventDashboardComponent
 
   ],
 
