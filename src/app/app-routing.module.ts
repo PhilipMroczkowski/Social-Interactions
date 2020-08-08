@@ -16,6 +16,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { EditGroupComponent } from './edit-group/edit-group.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
+import { EventDashboardComponent } from './event-dashboard/event-dashboard.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'signup', component: RegisterComponent},
   { path: 'resetpassword', component: ResetpasswordComponent},
   { path: 'group/:_id', component: GroupComponent, canActivate: [AuthGuard] }, 
-  { path: 'group/:_id/events', component: EventComponent, canActivate: [AuthGuard] },
+  { path: 'group/:_id/events', component: EventDashboardComponent, canActivate: [AuthGuard] },
   { path: 'creategroup', component: CreateGroupComponent, canActivate: [AuthGuard] },
   { path: 'groups', component: GroupDashboardComponent, canActivate: [AuthGuard] },
   { path: 'editgroup/:_id', component: EditGroupComponent, canActivate: [AuthGuard] },

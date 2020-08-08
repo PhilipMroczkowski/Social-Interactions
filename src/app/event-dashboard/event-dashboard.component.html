@@ -1,19 +1,12 @@
 <div class="center">
-    <h2><b>Group Dashboard!!!!!</b></h2>
-    <p class="lead" style="color: darkgreen;"><b>Now's not the time for you to think twice!!! Go for It</b></p>
-    <b>Wanna make one yourself? &#9;   &#9;  </b> 
-    <a href="/creategroup" style="border-top:red; background-color: gold; color: black; font-weight: bolder;" class="btn btn-xs">&#9;  Click Me</a> 
+    <h4><b>All Main Events</b></h4>
 </div> <br>
 
 
 <div class="container">
-    <input style="text-align: center; font-style: oblique; color: white; font-size: larger; font-weight: bolder ; background-color: rgb(23, 122, 117);" class="form-control" id="GroupSearch" name="GroupSearch" type="text" placeholder="Search a Group" 
-                (keyup)="onGroupSearchKeyUP($event)" /><br />
-
-                <ul *ngFor='let group of filteredGroups' (click) = "routeGroup(group.id)">
-                    <li> <img src={{group.groupCoverPhoto}} class="img-thumbnail" width="200" height="200"  /></li>
-                    <li style="color: rgb(23, 122, 117); font-size: x-large; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><b><i><u>{{group.name}}</u></i></b></li><br>
-                    <li><b>Category: </b>{{group.category}} , <b>Sub-category: </b> {{group.subCategory}}</li>
-                    <li><b>Sneak Peek: </b>{{group.description}}</li> <hr/>
+                <ul *ngFor='let event of Events'>
+                    <!--<li> <img src={{group.groupCoverPhoto}} class="img-thumbnail" width="200" height="200"  /></li>-->
+                    <li style="color: rgb(23, 122, 117); font-size: x-large; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><b><i><u>{{event.name}}</u></i></b></li><br>
+                    <li><b>Description: </b>{{event.description}}</li> <hr/>
                 </ul> <hr/>
 </div>

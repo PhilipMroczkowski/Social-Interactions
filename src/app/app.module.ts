@@ -41,6 +41,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { EditGroupComponent } from './edit-group/edit-group.component';
 import { EventDashboardComponent } from './event-dashboard/event-dashboard.component';
+import { EventService } from './services/event.service';
 
 
 @NgModule({
@@ -97,7 +98,7 @@ import { EventDashboardComponent } from './event-dashboard/event-dashboard.compo
     HttpClientModule,
     FormsModule
   ], 
-  providers: [UserService, GroupService,
+  providers: [UserService, GroupService, EventService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],

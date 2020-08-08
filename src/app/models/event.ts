@@ -1,9 +1,7 @@
-export class Group {
+export class Event {
     id : number;
     eventName: string;
     description: string;
     eventDate: Date;
     eventLocation: string;
-    organizer : string;
-    participant : string;
   }
