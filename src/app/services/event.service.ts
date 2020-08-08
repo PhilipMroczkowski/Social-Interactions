@@ -15,4 +15,8 @@ export class EventService {
   getAllEvents(): Observable<Event[]> {
     return this.http.get<Event[]>(this.url);
   }
+
+  getEvent(id: number): Observable<Event> {
+    return this.http.get<Event>(this.url + id);
+  }
 }

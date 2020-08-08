@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Event } from '../models/event';
 import { EventService } from '../services/event.service';
 import { Subscription } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-event-dashboard',
@@ -12,12 +13,18 @@ export class EventDashboardComponent implements OnInit, OnDestroy {
   Events: Event[];
   eventSubscription: Subscription;
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService,
+     private router: Router,
+      private activeRoute: ActivatedRoute) { }
  
   ngOnInit(): void {
     this.eventSubscription = this.eventService.getAllEvents().subscribe((data)=>{
       this.Events = data;
     })
+  }
+
+  viewEvent(id: number) {
+    this.router.navigate([id], {relativeTo: this.activeRoute});
   }
 
   ngOnDestroy() {

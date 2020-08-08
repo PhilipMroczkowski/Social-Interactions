@@ -8,7 +8,6 @@ import { EventComponent } from '../event/event.component';
 })
 export class EventpicturesComponent implements OnInit {
 
-  id : EventComponent["id"];
   imageUrl : string;
 
   constructor() { }

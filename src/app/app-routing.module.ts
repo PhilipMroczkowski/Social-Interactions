@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'resetpassword', component: ResetpasswordComponent},
   { path: 'group/:_id', component: GroupComponent, canActivate: [AuthGuard] }, 
   { path: 'group/:_id/events', component: EventDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'group/:_id/events/:_id', component: EventComponent, canActivate: [AuthGuard] },
   { path: 'creategroup', component: CreateGroupComponent, canActivate: [AuthGuard] },
   { path: 'groups', component: GroupDashboardComponent, canActivate: [AuthGuard] },
   { path: 'editgroup/:_id', component: EditGroupComponent, canActivate: [AuthGuard] },
