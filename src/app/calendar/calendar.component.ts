@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'app-calendar',
@@ -13,8 +13,9 @@ export class CalendarComponent implements OnInit, AfterViewInit {
   @ViewChild('theadMonth', { static: true }) thead_month: ElementRef;
   @ViewChild('monthAndYear', {static: true}) monthAndYear: ElementRef;
   @ViewChild('calendarBody', {static: true}) calendarBody: ElementRef;
+  @Input() EventDate: string;
   language: any;
-  today: Date;
+  dateObject: Date;
   currentMonth: any;
   currentYear: any;
   createYear: string;
@@ -23,9 +24,13 @@ export class CalendarComponent implements OnInit, AfterViewInit {
   dayHeader: string;
 
   constructor() {
-    this.today = new Date();
-    this.currentMonth = this.today.getMonth();
-    this.currentYear = this.today.getFullYear();
+    
+  }
+
+  ngOnInit(): void {
+    this.dateObject = new Date(this.EventDate);
+    this.currentMonth = this.dateObject.getMonth();
+    this.currentYear = this.dateObject.getFullYear();
     this.createYear = this.generate_year_range(1970, 2050);
     this.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     this.days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -35,9 +40,6 @@ export class CalendarComponent implements OnInit, AfterViewInit {
       this.dayHeader += "<th data-days='" + this.days[index] + "'>" + this.days[index] + "</th>";
     }
     this.dayHeader += "</tr>";
-  }
-
-  ngOnInit(): void {
   }
 
   ngAfterViewInit() {
@@ -107,7 +109,7 @@ export class CalendarComponent implements OnInit, AfterViewInit {
                 cell.className = "date-picker";
                 cell.innerHTML = "<span>" + date + "</span>";
   
-                if ( date === this.today.getDate() && year === this.today.getFullYear() && month === this.today.getMonth() ) {
+                if ( date === this.dateObject.getDate() && year === this.dateObject.getFullYear() && month === this.dateObject.getMonth() ) {
                     cell.className = "date-picker selected";
                 }
                 row.appendChild(cell);

@@ -6,9 +6,8 @@
 <div class="container">
                 <ul *ngFor='let event of Events'>
                     <!--<li> <img src={{group.groupCoverPhoto}} class="img-thumbnail" width="200" height="200"  /></li>-->
-                    <li style="color: rgb(23, 122, 117); font-size: x-large; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"
-                    (click)="viewEvent(event.id)">
-                       {{event.name}}
+                    <li style="font-size: x-large; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                       <u><a (click)="viewEvent(event.id)">{{event.name}}</a></u>
                     </li>
                     <br>
                     <li><b>Description: </b>{{event.description}}</li> <hr/>
