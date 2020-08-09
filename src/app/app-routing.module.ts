@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'creategroup', component: CreateGroupComponent, canActivate: [AuthGuard] },
   { path: 'groups', component: GroupDashboardComponent, canActivate: [AuthGuard] },
   { path: 'editgroup/:_id', component: EditGroupComponent, canActivate: [AuthGuard] },
-  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'user/:_id', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'events' , component: EventComponent},
   { path: '' , component: HomeComponent},
   //{ path: '', redirectTo: '/home', pathMatch: 'full'},

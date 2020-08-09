@@ -56,7 +56,7 @@
 
 <div class="form-group">
   <label for="description">Who are you looking for?</label>
-  <input type="text" formControlName="memberType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.memberType.errors }" />
+  <input type="text" formControlName="memberType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.memberType.errors }" placeholder="All Ages"/>
   <div *ngIf="submitted && f.memberType.errors" class="invalid-feedback">
       <div *ngIf="f.memberType.errors.required">Please indicated the type of person you would like to join your group (ie: All Ages, Over 18)</div>
   </div>

@@ -40,8 +40,8 @@ export class CreateGroupComponent implements OnInit {
       subCategory: [''],
       purpose: ['', [Validators.required, Validators.minLength(6)]],
       description: ['', Validators.required],
-      memberType: ['All Ages', Validators.required],
-      groupCoverPhoto: ['http://via.placeholder.com/640x360', Validators.required]
+      memberType: ['', Validators.required],
+      groupCoverPhoto: ['', Validators.required]
   });
   }
 

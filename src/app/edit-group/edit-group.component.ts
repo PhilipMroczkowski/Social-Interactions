@@ -18,7 +18,18 @@ export class EditGroupComponent implements OnInit {
   submitted = false;
   groupSubscription: any;
   paramSubscription: any;
-  group: Group;
+  group: Group = {
+    id: 0,
+  name: '',
+  numMembers: 0,
+  tags: '',
+  category: '',
+  subCategory: '',
+  purpose: '',
+  description: '',
+  memberType: '',
+  groupCoverPhoto: '',
+  admin: ''};
   id: number;
   
   constructor(private gs:GroupService,
@@ -54,16 +65,29 @@ export class EditGroupComponent implements OnInit {
 
   resetForm(form?:NgForm){
     this.editGroupForm = this.formBuilder.group({
-      id: [this.group.id],
-      name: [this.group.name],
-      numMembers: [this.group.numMembers],
-      tags: [this.group.tags, Validators.required],
-      category: [this.group.category, Validators.required],
-      subCategory: [this.group.category, Validators.required],
-      purpose: [this.group.purpose, [Validators.required, Validators.minLength(6)]],
-      description: [this.group.description, Validators.required],
-      memberType: [this.group.memberType, Validators.required],
-      groupCoverPhoto: [this.group.groupCoverPhoto, Validators.required]
+      id: '',
+      name: '',
+      numMembers: '',
+      tags: '',
+      category: '',
+      subCategory: '',
+      purpose: '',
+      description: '',
+      memberType: '',
+      groupCoverPhoto: ''
+  });
+  
+  this.editGroupForm.patchValue({
+    id: this.group.id,
+    name: this.group.name,
+    numMembers: this.group.numMembers,
+    tags: this.group.tags,
+    category: this.group.category,
+    subCategory: this.group.subCategory,
+    purpose: this.group.purpose,
+    description: this.group.description,
+    memberType: this.group.memberType,
+    groupCoverPhoto: this.group.groupCoverPhoto
   });
 }
 get f() { return this.editGroupForm.controls;}
@@ -81,7 +105,7 @@ get f() { return this.editGroupForm.controls;}
     .pipe(first())
     .subscribe(data => {
       this.alertService.success('Group edited!', true);
-      this.router.navigate(['/groups']);
+      this.router.navigate(['/group/' + this.id]);
     },
     error => {
       this.alertService.error(error);
