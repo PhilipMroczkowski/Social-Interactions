@@ -2,21 +2,19 @@
 
 
 
-
-<div>
-  <ul>
-    <a href="/" class="pull-left"><img src="assets/SocialIneractionsIcon.png"></a> 
-    <a href="/home" class="btn"> Social Interactions </a>
+<div class="topnav">
+  <a href="/" class="pull-left"><img src="assets/SocialIneractionsIcon.png"></a> 
+<div class =topnav-right>
+    <a class="active" href="/home" class="btn"> Social Interactions </a>
     <a href="/aboutus" class="btn"> About Us </a>
     <a *ngIf="!currentUser" href="/signup" class="btn"  > Sign Up </a>
     <a *ngIf="!currentUser" href="/login" class="btn"  > Login  </a>
-    <a *ngIf="currentUser" onClick="window.location.reload();" class="btn" (click)="logout()"> Logout </a>
     <a *ngIf="currentUser" href="/groups" class="btn"> Groups </a>
     <a *ngIf="currentUser" href="/creategroup" class="btn"> Create Group </a>
     <a *ngIf="currentUser" href="/user" class="btn"> Profile </a>
-  </ul>
+    <a *ngIf="currentUser" onClick="window.location.reload();" class="btn" (click)="logout()"> Logout </a>
 </div>
-
+</div>
 
 
 

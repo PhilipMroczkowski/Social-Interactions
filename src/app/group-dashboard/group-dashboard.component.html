@@ -2,20 +2,20 @@
 
 <body>
     <div class="center">
-        <h2><b>Group Dashboard!!!!!</b></h2>
-        <p class="lead" style="color: darkgreen;"><b>Now's not the time for you to think twice!!! Go for It</b></p>
+        <h2><b>Group Dashboard</b></h2>
+        <p class="lead" style="color: #2c2f31;"><b>Now's not the time for you to think twice Go for It</b></p>
         <b>Wanna make one yourself? &#9;   &#9;  </b> 
-        <a href="/creategroup" style="border-top:red; background-color: gold; color: black; font-weight: bolder;" class="btn btn-xs">&#9;  Click Me</a> 
+        <a href="/creategroup" style=" background-color: #ffcd24; color: #2c2f31; font-weight: bolder;" class="btn btn-xs">&#9;  Click Me</a> 
     </div> <br>
     
     
     <div class="container">
-        <input style="text-align: center; font-style: oblique; color: white; font-size: larger; font-weight: bolder ; background-color: rgb(23, 122, 117);" class="form-control" id="GroupSearch" name="GroupSearch" type="text" placeholder="Search a Group" 
+        <input style="text-align: center; font-style: oblique; color: white; font-size: larger; font-weight: bolder ; background-color: #2c2f31;" class="form-control"  w3-hover-yellow id="GroupSearch" name="GroupSearch" type="text" placeholder="Search a Group" 
                     (keyup)="onGroupSearchKeyUP($event)" /><br />
     
                     <ul *ngFor='let group of filteredGroups' (click) = "routeGroup(group.id)">
                         <li> <img src={{group.groupCoverPhoto}} class="img-thumbnail" width="200" height="200"  /></li>
-                        <li style="color: rgb(23, 122, 117); font-size: x-large; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><b><i><u>{{group.name}}</u></i></b></li><br>
+                        <li style="color: #ffcd24; font-size: x-large; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><b><i><u>{{group.name}}</u></i></b></li><br>
                         <li><b>Category: </b>{{group.category}} , <b>Sub-category: </b> {{group.subCategory}}</li>
                         <li><b>Sneak Peek: </b>{{group.description}}</li> <hr/>
                     </ul> <hr/>
