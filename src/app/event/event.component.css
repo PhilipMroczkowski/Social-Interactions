@@ -1,1 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css"; 
+
+.navbar {
+    background-color: #ffcd24;;
+    overflow: hidden;
+  }

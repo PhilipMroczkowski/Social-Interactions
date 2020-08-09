@@ -1,5 +1,5 @@
 <div class="center">
-    <h4><b>All Main Events</b></h4>
+    <h2><b>All Main Events</b></h2>
 </div> <br>
 
 
@@ -9,7 +9,7 @@
                         <li> <img *ngIf="picture.id == event.id" src={{picture.image}} class="img-thumbnail" width="200" height="200"  /></li>
                     </div>
                     <li style="font-size: x-large; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-                       <u><a style="color: green;" (click)="viewEvent(event.id)">{{event.name}}</a></u>
+                       <u><a style="color: #ffcd24;" (click)="viewEvent(event.id)">{{event.name}}</a></u>
                     </li>
                     <br>
                     <li><b>Description: </b>{{event.description}}</li> <hr/>
