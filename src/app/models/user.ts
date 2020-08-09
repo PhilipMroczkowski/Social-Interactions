@@ -13,5 +13,5 @@ export class User {
     birthDate:Date;
     interests: string;
     id: number;
-    token: User;
+    token: string;
 }

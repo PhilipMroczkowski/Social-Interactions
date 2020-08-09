@@ -13,12 +13,20 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   currentUser: User;
   users = [];
-  
+  userSubscription: any;
   constructor(
     private authenticationService: AuthenticationService,
-    private router: Router) 
+    private router: Router,
+    private ur: UserService) 
     {
-    this.currentUser = this.authenticationService.currentUserValue;
+    
+this.userSubscription = this.authenticationService.currentUser
+.subscribe(user => {
+  this.currentUser = user;
+})
+
+console.log(this.currentUser)
+
 }
 
 
@@ -28,6 +36,8 @@ logout() {
 }
 
   ngOnInit() {
+
+    //this.userSubscription = this.ur.getById(this.currentUser.id)
   }
 
 }

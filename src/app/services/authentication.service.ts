@@ -9,7 +9,7 @@ import { User } from '../models/user';
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
-
+    public userID: number;
     private apiUrl = 'https://lit-ocean-67937.herokuapp.com'
 
     constructor(private http: HttpClient) {
@@ -29,6 +29,7 @@ export class AuthenticationService {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
                     this.currentUserSubject.next(user);
+                    
                 }
 
                 return user;
