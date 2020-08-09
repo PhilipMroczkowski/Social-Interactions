@@ -12,8 +12,22 @@ export class GroupComponent implements OnInit {
 
   paramSubscription: any;
   groupSubscription: any;
-  group: Group;
   id: number;
+
+  group: Group = {
+    id: 0,
+  name: '',
+  numMembers: 0,
+  tags: '',
+  category: '',
+  subCategory: '',
+  purpose: '',
+  description: '',
+  memberType: '',
+  groupCoverPhoto: '',
+  admin: ''
+};
+
   constructor(
     private gs: GroupService,
     private ar: ActivatedRoute,

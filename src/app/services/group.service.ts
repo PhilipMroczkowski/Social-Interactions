@@ -30,7 +30,9 @@ getAllGroups(): Observable<Group[]>{
 }
 
 editGroup(group:Group){
-  return this.http.put(this.url + 'group/' + group.id, group)
+
+
+  return this.http.put(this.url + group.id, group)
 }
 
 generateGroup(group: Group): Group{

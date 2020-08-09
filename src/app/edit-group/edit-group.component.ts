@@ -18,18 +18,9 @@ export class EditGroupComponent implements OnInit {
   submitted = false;
   groupSubscription: any;
   paramSubscription: any;
-  group: Group = {
-    id: 0,
-  name: '',
-  numMembers: 0,
-  tags: '',
-  category: '',
-  subCategory: '',
-  purpose: '',
-  description: '',
-  memberType: '',
-  groupCoverPhoto: '',
-  admin: ''};
+  group: Group;
+
+
   id: number;
   
   constructor(private gs:GroupService,
@@ -59,36 +50,28 @@ export class EditGroupComponent implements OnInit {
         console.log('unable to get group');
       }
     );
+      
 
     this.resetForm();
   }
 
   resetForm(form?:NgForm){
+
+    
+
     this.editGroupForm = this.formBuilder.group({
-      id: '',
-      name: '',
-      numMembers: '',
-      tags: '',
-      category: '',
-      subCategory: '',
-      purpose: '',
-      description: '',
-      memberType: '',
-      groupCoverPhoto: ''
+      id: 1,
+    name: [JSON.stringify(this.group.name)],
+    numMembers: [this.group.numMembers],
+    tags: [this.group.tags],
+    category: [JSON.stringify(this.group.category)],
+    subCategory: [this.group.subCategory],
+    purpose: [this.group.purpose],
+    description: [this.group.description],
+    memberType: [this.group.memberType],
+    groupCoverPhoto: [this.group.groupCoverPhoto]
   });
-  
-  this.editGroupForm.patchValue({
-    id: this.group.id,
-    name: this.group.name,
-    numMembers: this.group.numMembers,
-    tags: this.group.tags,
-    category: this.group.category,
-    subCategory: this.group.subCategory,
-    purpose: this.group.purpose,
-    description: this.group.description,
-    memberType: this.group.memberType,
-    groupCoverPhoto: this.group.groupCoverPhoto
-  });
+
 }
 get f() { return this.editGroupForm.controls;}
 
@@ -105,7 +88,7 @@ get f() { return this.editGroupForm.controls;}
     .pipe(first())
     .subscribe(data => {
       this.alertService.success('Group edited!', true);
-      this.router.navigate(['/group/' + this.id]);
+      this.router.navigate(['/group/' + this.group.id]);
     },
     error => {
       this.alertService.error(error);
