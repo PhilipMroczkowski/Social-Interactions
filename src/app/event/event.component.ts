@@ -11,8 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EventComponent implements OnInit, OnDestroy {
   event: any;
+  eventPicture: any;
   eventID: number;
   eventSubscription: Subscription;
+  eventPictureSubscription: Subscription;
 
   constructor(private eventService: EventService, private activeRoute: ActivatedRoute) {}
   
@@ -23,11 +25,17 @@ export class EventComponent implements OnInit, OnDestroy {
     this.eventSubscription = this.eventService.getEvent(this.eventID).subscribe((data)=>{
       this.event = data[0];
     })
+    this.eventPictureSubscription = this.eventService.getEventPicture(this.eventID).subscribe((data)=>{
+      this.eventPicture = data[0];
+    })
   }
 
   ngOnDestroy() {
     if (this.eventSubscription != undefined) {
       this.eventSubscription.unsubscribe();
+    }
+    if (this.eventPictureSubscription != undefined) {
+      this.eventPictureSubscription.unsubscribe();
     }
   }
 

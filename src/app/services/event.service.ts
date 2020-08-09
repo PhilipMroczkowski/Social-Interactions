@@ -8,15 +8,23 @@ import { Observable } from 'rxjs';
 })
 export class EventService {
 
-  private url: string = "https://lit-ocean-67937.herokuapp.com/event/";
+  private url: string = "https://lit-ocean-67937.herokuapp.com/";
 
   constructor(private http: HttpClient) { }
 
   getAllEvents(): Observable<Event[]> {
-    return this.http.get<Event[]>(this.url);
+    return this.http.get<Event[]>(this.url + "event/");
   }
 
   getEvent(id: number): Observable<Event> {
-    return this.http.get<Event>(this.url + id);
+    return this.http.get<Event>(this.url + "event/" + id);
+  }
+
+  getEventPictures() {
+    return this.http.get(this.url + "eventpicture/");
+  }
+
+  getEventPicture(id: number) {
+    return this.http.get(this.url + "eventpicture/" + id);
   }
 }

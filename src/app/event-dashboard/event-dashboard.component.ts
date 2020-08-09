@@ -11,7 +11,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EventDashboardComponent implements OnInit, OnDestroy {
   Events: Event[];
+  EventPictures: any;
   eventSubscription: Subscription;
+  eventPictureSubscription:Subscription;
 
   constructor(private eventService: EventService,
      private router: Router,
@@ -21,6 +23,10 @@ export class EventDashboardComponent implements OnInit, OnDestroy {
     this.eventSubscription = this.eventService.getAllEvents().subscribe((data)=>{
       this.Events = data;
     })
+    this.eventPictureSubscription = this.eventService.getEventPictures().subscribe((data)=>{
+      this.EventPictures = data;
+    })
+
   }
 
   viewEvent(id: number) {
@@ -30,6 +36,9 @@ export class EventDashboardComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     if (this.eventSubscription != undefined) {
       this.eventSubscription.unsubscribe();
+    }
+    if (this.eventPictureSubscription != undefined) {
+      this.eventPictureSubscription.unsubscribe();
     }
   }
 
