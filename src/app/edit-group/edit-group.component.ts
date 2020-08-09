@@ -18,8 +18,8 @@ export class EditGroupComponent implements OnInit {
   submitted = false;
   groupSubscription: any;
   paramSubscription: any;
-  group: Group;
-
+  
+  group:Group;
 
   id: number;
   
@@ -56,20 +56,15 @@ export class EditGroupComponent implements OnInit {
   }
 
   resetForm(form?:NgForm){
-
-    
-
     this.editGroupForm = this.formBuilder.group({
-      id: 1,
-    name: [JSON.stringify(this.group.name)],
-    numMembers: [this.group.numMembers],
-    tags: [this.group.tags],
-    category: [JSON.stringify(this.group.category)],
-    subCategory: [this.group.subCategory],
-    purpose: [this.group.purpose],
-    description: [this.group.description],
-    memberType: [this.group.memberType],
-    groupCoverPhoto: [this.group.groupCoverPhoto]
+    id: [this.id],
+    tags: [''],
+    category: [''],
+    subCategory: [''],
+    purpose: [''],
+    description: [''],
+    memberType: [''],
+    groupCoverPhoto: ['']
   });
 
 }
@@ -88,7 +83,7 @@ get f() { return this.editGroupForm.controls;}
     .pipe(first())
     .subscribe(data => {
       this.alertService.success('Group edited!', true);
-      this.router.navigate(['/group/' + this.group.id]);
+      this.router.navigate(['/group/' + this.id]);
     },
     error => {
       this.alertService.error(error);

@@ -13,7 +13,7 @@ export class GroupService {
 
   private url = 'https://lit-ocean-67937.herokuapp.com/group/'
 
-group:Group;
+firstGroup: Observable<Group[]>;
 
 createGroup(group:Group){
   this.generateGroup(group);
@@ -31,8 +31,19 @@ getAllGroups(): Observable<Group[]>{
 
 editGroup(group:Group){
 
-
+  this.firstGroup = this.getGroup(group.id)
+  this.fillGroup(this.firstGroup, group)
   return this.http.put(this.url + group.id, group)
+}
+
+fillGroup(oldGroup: Observable<Group[]>, newGroup: Group): Group {
+  for (var key in newGroup){
+    if (newGroup[key] == '' || newGroup[key] == 0){
+      newGroup[key] = oldGroup[key];
+    }
+  }
+
+  return newGroup;
 }
 
 generateGroup(group: Group): Group{

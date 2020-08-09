@@ -3,36 +3,37 @@
 <form class="container" [formGroup]="editGroupForm" (ngSubmit)="OnSubmit()">
 
 <div class="form-group">
+  <img src={{group.groupCoverPhoto}}/>
   <label for="groupCoverPhoto">Group Picture</label>
   <input type="text" formControlName="groupCoverPhoto" class="form-control" />
 </div>
 
 <div class="form-group">
-  <label for="category">Category</label>
+  <label for="category">Category ({{group.category}})</label>
   <input type="text" formControlName="category" class="form-control" />
 </div>
 <div class="form-group">
-  <label for="subCategory">Sub Category</label>
+  <label for="subCategory">Sub Category ({{group.subCategory}})</label>
   <input type="text" formControlName="subCategory" class="form-control"  />
   
 </div>
 <div class="form-group">
-  <label for="purpose">Purpose</label>
+  <label for="purpose">Purpose ({{group.purpose}})</label>
   <input type="text" formControlName="purpose" class="form-control" />
 </div>
 <div class="form-group">
-  <label for="description">Description</label>
+  <label for="description">Description ({{group.description}})</label>
   <input type="text" formControlName="description" class="form-control"  />
   
 </div>
 <div class="form-group">
-  <label for="tags">Tags</label>
+  <label for="tags">Tags ({{group.tags}})</label>
   <input type="text" formControlName="tags" class="form-control"  />
   
 </div>
 
 <div class="form-group">
-  <label for="description">Who are you looking for?</label>
+  <label for="description">Who are you looking for? ({{group.memberType}})</label>
   <input type="text" formControlName="memberType" class="form-control"  />
   
 </div>
