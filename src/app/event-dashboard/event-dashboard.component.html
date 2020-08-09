@@ -9,7 +9,7 @@
                         <li> <img *ngIf="picture.id == event.id" src={{picture.image}} class="img-thumbnail" width="200" height="200"  /></li>
                     </div>
                     <li style="font-size: x-large; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-                       <u><a (click)="viewEvent(event.id)">{{event.name}}</a></u>
+                       <u><a style="color: green;" (click)="viewEvent(event.id)">{{event.name}}</a></u>
                     </li>
                     <br>
                     <li><b>Description: </b>{{event.description}}</li> <hr/>
