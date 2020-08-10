@@ -25,7 +25,6 @@ this.userSubscription = this.authenticationService.currentUser
   this.currentUser = user;
 })
 
-console.log(this.currentUser)
 
 }
 
@@ -37,7 +36,12 @@ logout() {
 
   ngOnInit() {
 
-    //this.userSubscription = this.ur.getById(this.currentUser.id)
   }
+
+routeUser(id: number){
+  this.router.navigate(['/user/', id]);
+
+}
+
 
 }

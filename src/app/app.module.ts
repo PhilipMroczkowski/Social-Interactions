@@ -42,6 +42,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { EditGroupComponent } from './edit-group/edit-group.component';
 import { EventDashboardComponent } from './event-dashboard/event-dashboard.component';
 import { EventService } from './services/event.service';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { EventService } from './services/event.service';
     FooterComponent,
     AboutUsComponent,
     EditGroupComponent,
-    EventDashboardComponent
+    EventDashboardComponent,
+    EditUserComponent
 
   ],
 
