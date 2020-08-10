@@ -5,7 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../services/authentication.service';
 import { AlertService } from '../services/alert.service';
-import { User } from '@/models/user';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-edit-user',
@@ -88,4 +88,11 @@ user:User;
                 this.loading = false;
             });
 }
+
+
+  routeUser(id: number){
+    this.router.navigate(['/user/', id]);
+  
+  }
+
 }

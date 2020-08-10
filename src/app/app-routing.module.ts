@@ -17,6 +17,7 @@ import { EditGroupComponent } from './edit-group/edit-group.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
 import { EventDashboardComponent } from './event-dashboard/event-dashboard.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'groups', component: GroupDashboardComponent, canActivate: [AuthGuard] },
   { path: 'editgroup/:_id', component: EditGroupComponent, canActivate: [AuthGuard] },
   { path: 'user/:_id', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'user/edit/:_id', component: EditUserComponent, canActivate: [AuthGuard] },
   { path: 'events' , component: EventComponent},
   { path: '' , component: HomeComponent},
   //{ path: '', redirectTo: '/home', pathMatch: 'full'},
