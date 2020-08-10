@@ -95,7 +95,6 @@ user:User;
 
   routeUser(id: number){
     this.router.navigate(['/user/', id]);
-  
   }
 
 }
