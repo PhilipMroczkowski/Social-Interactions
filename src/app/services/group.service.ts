@@ -18,7 +18,7 @@ firstGroup: Observable<Group[]>;
 createGroup(group:Group){
   this.generateGroup(group);
 
-  return this.http.post(this.url + 'create', group);
+  return this.http.post(this.url + '/create/', group);
 }
 
 getGroup(id: number): Observable<Group[]> {
