@@ -1,5 +1,6 @@
-<h2>Register</h2>
-<form class="container" [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
+<h2>Edit User</h2>
+<h2>{{user.username}}</h2>
+<form class="container" *ngIf="editUserForm" [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
     
     <div class="form-group">
         <label for="username">Username</label>

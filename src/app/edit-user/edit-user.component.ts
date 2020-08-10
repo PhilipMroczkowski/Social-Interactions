@@ -38,7 +38,7 @@ user:User;
     private ar: ActivatedRoute
     ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.paramSubscription = this.ar.params.subscribe(params => {
       this.id = params['_id'],
       function(err){ console.log('unable to get id');}
@@ -51,10 +51,13 @@ user:User;
         console.log('unable to get user');
       }
     );
+
+    this.resetForm();
   }
 
   resetForm(form?:NgForm){
     this.editUserForm = this.formBuilder.group({
+      id: [this.id],
       username: [''],
       email: [''],
       phoneNumber:[''],
@@ -62,7 +65,6 @@ user:User;
       postalCode: [''],
       favouriteEvents: [''],
       favouriteGroups: [''],
-      joinedGroups: [''],
       interests: ['']
     })
   }
@@ -81,7 +83,8 @@ user:User;
         .pipe(first())
         .subscribe(
             data => {
-                this.alertService.success('User Edited!')
+                this.alertService.success('User Edited!', true);
+               this.router.navigate(['/user/', this.id]);
             },
             error => {
                 this.alertService.error(error);

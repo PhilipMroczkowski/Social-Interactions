@@ -31,7 +31,7 @@ export class UserService {
 
     update(user: User) {
         this.firstUser = this.getById(user.id);
-        this.fillUser(this.firstUser, user);
+        user = this.fillUser(this.firstUser, user);
         return this.http.put(this.apiUrl+`/user/${user.id}`, user);
     }
 
