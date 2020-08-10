@@ -1,37 +1,7 @@
-<div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" formControlName="username" class="form-control" />
-</div>
-<div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" formControlName="email" ngModel email="true" class="form-control"/>
-    
-</div>
-<div class="form-group">
-    <label for="interests">Interests</label>
-    <input type="text" formControlName="interests" class="form-control"  />
-</div>
-<div class="form-group">
-    <label for="phoneNumber">Phone Number</label>
-    <input type="text" formControlName="phoneNumber" class="form-control"  />
-</div>
-<div class="form-group">
-    <label for="address">Address</label>
-    <input type="text" formControlName="address" class="form-control"  />
-</div>
-<div class="form-group">
-    <label for="postalCode">Postal Code</label>
-    <input type="text" formControlName="postalCode" class="form-control"  />
-</div>
-
-<div class="form-group">
-    <label for="favouriteEvents">Favourite Events</label>
-    <input type="text" formControlName="favouriteEvents" class="form-control"  />
-</div>
-
-<div class="form-group">
-    <label for="favouriteGroups">Favourite Groups</label>
-    <input type="text" formControlName="favouriteGroups" class="form-control"  />
-</div>
+<div class="container">
+   <h2>Welcome {{currentUser.username}} </h2>
+   <p>Your current interests are: <b>{{currentUser.interests}}</b></p>
+   <p>Your favourite event is: <b>{{currentUser.favouriteEvents}}</b></p>
+   <p>Your favourite group is: <b>{{currentUser.favouriteGroups}}</b></p>
 
 <a (click)="routeUser(this.id)" style=" background-color: #ffcd24;" class="btn btn-link">Edit Profile</a>

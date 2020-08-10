@@ -5,6 +5,7 @@ import { AlertService } from '../services/alert.service';
 import { UserService } from '../services/user.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { User } from '../models/user';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user',
@@ -12,7 +13,7 @@ import { User } from '../models/user';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
+  currentUser: User;
   id : number;
   name : string[];
   //username : LoginComponent["username"];
@@ -30,13 +31,20 @@ export class UserComponent implements OnInit {
   userSubscription: any;
   user: User;
 
+
+  
+
   constructor(
     private router: Router,
+    
     private authenticationService: AuthenticationService,
     private userService: UserService,
     private alertService: AlertService,
     private ar: ActivatedRoute
-  ) { }
+    
+  ) {
+    this.currentUser = this.authenticationService.currentUserValue;
+   }
 
   ngOnInit() {
     this.paramSubscription = this.ar.params.subscribe(params => {
@@ -44,6 +52,9 @@ export class UserComponent implements OnInit {
       function(err){ console.log('unable to get id');}
     })
 
+
+
+    
     this.userSubscription = this.userService.getById(this.id)
     .subscribe(
       user => this.user = user[0],
@@ -57,5 +68,8 @@ export class UserComponent implements OnInit {
   routeUser(id: number){
     this.router.navigate(['/user/edit/', id]);
   }
+
+
+
 
 }
