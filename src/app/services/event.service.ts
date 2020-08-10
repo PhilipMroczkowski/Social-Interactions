@@ -17,9 +17,13 @@ export class EventService {
   }
 
   getEvent(id: number): Observable<Event> {
-    return this.http.get<Event>(this.url + "event/" + id);
+    return this.http.get<Event>(this.url + "event/searchbyid/" + id);
   }
 
+  getEventByName(name: String): Observable<Event> {
+    return this.http.get<Event>(this.url + "event/searchbyname/" + name);
+  }
+D
   getEventPictures() {
     return this.http.get(this.url + "eventpicture/");
   }

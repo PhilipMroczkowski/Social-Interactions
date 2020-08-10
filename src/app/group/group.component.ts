@@ -14,19 +14,7 @@ export class GroupComponent implements OnInit {
   groupSubscription: any;
   id: number;
 
-  group: Group = {
-    id: 0,
-  name: '',
-  numMembers: 0,
-  tags: '',
-  category: '',
-  subCategory: '',
-  purpose: '',
-  description: '',
-  memberType: '',
-  groupCoverPhoto: '',
-  admin: ''
-};
+  group: Group;
 
   constructor(
     private gs: GroupService,

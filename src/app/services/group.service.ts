@@ -11,7 +11,7 @@ export class GroupService {
   readonly rootUrl='http://localhost:64493';
   constructor(private http: HttpClient) { }
 
-  private url = 'https://lit-ocean-67937.herokuapp.com/group/'
+  private url = 'https://lit-ocean-67937.herokuapp.com/group'
 
 firstGroup: Observable<Group[]>;
 
@@ -21,9 +21,13 @@ createGroup(group:Group){
   return this.http.post(this.url + 'create', group);
 }
 
-getGroup(id): Observable<Group[]> {
-  return this.http.get<Group[]>(this.url + id);
+getGroup(id: number): Observable<Group[]> {
+  return this.http.get<Group[]>(this.url + '/'+ id);
 }
+
+getGroupByName(name: String): Observable<Group[]> {
+    return this.http.get<Group[]>(this.url+ '/searchbyname/' + name);
+  }
 
 getAllGroups(): Observable<Group[]>{
   return this.http.get<Group[]>(this.url);
