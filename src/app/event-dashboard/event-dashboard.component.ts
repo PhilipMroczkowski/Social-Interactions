@@ -15,6 +15,8 @@ export class EventDashboardComponent implements OnInit, OnDestroy {
   eventSubscription: Subscription;
   eventPictureSubscription:Subscription;
 
+  filteredEvents : Event[];
+
   constructor(private eventService: EventService,
      private router: Router,
       private activeRoute: ActivatedRoute) { }
@@ -22,11 +24,19 @@ export class EventDashboardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.eventSubscription = this.eventService.getAllEvents().subscribe((data)=>{
       this.Events = data;
+      this.filteredEvents = data;
     })
     this.eventPictureSubscription = this.eventService.getEventPictures().subscribe((data)=>{
       this.EventPictures = data;
     })
 
+  }
+
+  onEventSearchKeyUP(event:any){
+    let my_filter: string = event.target.value.toLowerCase();
+    this.filteredEvents =  this.Events.filter((event) => 
+    ((event.eventName.toLowerCase().indexOf(my_filter) != -1) || 
+    (event.description.toLowerCase().indexOf(my_filter) != -1))) 
   }
 
   viewEvent(id: number) {
@@ -43,3 +53,4 @@ export class EventDashboardComponent implements OnInit, OnDestroy {
   }
 
 }
+
