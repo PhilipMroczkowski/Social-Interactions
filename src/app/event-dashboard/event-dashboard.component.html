@@ -4,7 +4,11 @@
 
 
 <div class="container">
-                <ul *ngFor='let event of Events'>
+
+    <input style="text-align: center; font-style: oblique; color: white; font-size: larger; font-weight: bolder ; background-color: #2c2f31;" class="form-control"  w3-hover-yellow id="EventSearch" name="EventSearch" type="text" placeholder="Search an Event" 
+                    (keyup)="onEventSearchKeyUP($event)" /><br />
+
+                <ul *ngFor='let event of filteredEvents'>
                     <div *ngFor="let picture of EventPictures">
                         <li> <img *ngIf="picture.id == event.id" src={{picture.image}} class="img-thumbnail" width="200" height="200"  /></li>
                     </div>
