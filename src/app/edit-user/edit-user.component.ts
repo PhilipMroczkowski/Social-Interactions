@@ -39,6 +39,7 @@ user:User;
     ) { }
 
   ngOnInit() {
+
     this.paramSubscription = this.ar.params.subscribe(params => {
       this.id = params['_id'],
       function(err){ console.log('unable to get id');}
@@ -56,6 +57,9 @@ user:User;
   }
 
   resetForm(form?:NgForm){
+
+    this.canEditUser(this.id);
+
     this.editUserForm = this.formBuilder.group({
       id: [this.id],
       username: [''],
@@ -97,4 +101,10 @@ user:User;
     this.router.navigate(['/user/', id]);
   }
 
+  canEditUser(id: number){
+    const currentUser = this.authenticationService.currentUserValue;
+    if(id != currentUser.id){
+      this.router.navigate(['/user/' + currentUser.id]);
+    }
+  }
 }
