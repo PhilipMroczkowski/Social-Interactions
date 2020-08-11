@@ -35,7 +35,7 @@ export class EventDashboardComponent implements OnInit, OnDestroy {
   onEventSearchKeyUP(event:any){
     let my_filter: string = event.target.value.toLowerCase();
     this.filteredEvents =  this.Events.filter((event) => 
-    ((event.eventName.toLowerCase().indexOf(my_filter) != -1) || 
+    ((event.name.toLowerCase().indexOf(my_filter) != -1) || 
     (event.description.toLowerCase().indexOf(my_filter) != -1))) 
   }
 
