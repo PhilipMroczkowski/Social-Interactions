@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class UserService {
     constructor(private http: HttpClient) { }
 
-    private apiUrl = 'https://lit-ocean-67937.herokuapp.com'
+    private apiUrl = 'https://afternoon-plateau-61692.herokuapp.com'
 
     firstUser: Observable<User[]>;
 

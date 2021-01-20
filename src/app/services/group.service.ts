@@ -11,7 +11,7 @@ export class GroupService {
   readonly rootUrl='http://localhost:64493';
   constructor(private http: HttpClient) { }
 
-  private url = 'https://lit-ocean-67937.herokuapp.com/group'
+  private url = 'https://afternoon-plateau-61692.herokuapp.com/group'
 
 firstGroup: Observable<Group[]>;
 

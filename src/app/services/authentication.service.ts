@@ -10,7 +10,7 @@ export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
     public userID: number;
-    private apiUrl = 'https://lit-ocean-67937.herokuapp.com'
+    private apiUrl = 'https://afternoon-plateau-61692.herokuapp.com'
 
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
