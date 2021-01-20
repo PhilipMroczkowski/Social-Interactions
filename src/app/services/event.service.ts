@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class EventService {
 
-  private url: string = "https://lit-ocean-67937.herokuapp.com/";
+  private url: string = "https://afternoon-plateau-61692.herokuapp.com/";
 
   constructor(private http: HttpClient) { }
 
